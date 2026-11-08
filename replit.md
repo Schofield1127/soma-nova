@@ -1,15 +1,46 @@
-# [Project name]
+# Soma Nova
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM CPT and CNC). It is the new name for Protea Fitness (proteafitness.com).
+
+## Scope and launch hold
+
+- Scaffold only. Do not build the full site until asked.
+- The placeholder homepage says: "Soma Nova, personal training in Morgan Hill. Coming soon."
+- Keep the HTML robots tag set to `noindex, nofollow` and `public/robots.txt` disallowing all crawlers until the user explicitly approves launch.
+- Do not publish, deploy, connect a domain, or buy anything without explicit user approval.
+- Do not add analytics, tracking pixels, or any third-party embeds without approval.
+
+## Business facts and content rules
+
+- Training happens one-on-one in a private home studio in Morgan Hill, with in-home sessions available on request.
+- Never publish the studio's street address, a map pin, or coordinates, including in structured data. Share the address only after someone books.
+- Specialties: corrective, bodyweight, strength, nutrition coaching, and special circumstances (chronic illness, pre/postnatal, seniors, youth, post-physical therapy).
+- Public phone: (408) 705-7176, call or text.
+- Email: proteafitness.morganhill@gmail.com, until a new address is chosen.
+- Instagram: @protea_fitness (it will be renamed later).
+- Pricing isn't final. Don't publish any prices until the user confirms them.
+- Never make medical claims or promise health outcomes.
+- The site's display name is "Soma Nova". Use "formerly Protea Fitness" in the footer at launch.
+
+## Security and project separation
+
+- Keep all keys and credentials in Secrets. Never put them in code or chat.
+- This project is completely separate from The Wheel Guys. Don't reuse its code, keys, phone numbers, or accounts.
+- No authentication, bookings, payments, database features, tracking, or external embeds are implemented in this scaffold.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- Install dependencies with `pnpm install`.
+- Frontend: `pnpm --filter @workspace/soma-nova run dev`
+- API: `pnpm --filter @workspace/api-server run dev`
+- Use the existing managed workflows in Replit; they provide `PORT` and `BASE_PATH`.
+- Outside Replit, provide `PORT=5173 BASE_PATH=/` for the frontend and `PORT=5000` for the API.
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- The current placeholder and API health check do not require a database or credentials.
+- The unused database library would require `DATABASE_URL` if future approved work uses it.
 
 ## Stack
 
@@ -22,23 +53,20 @@ _Replace the heading above with the project's name, and this line with one sente
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/soma-nova/` — React + Vite TypeScript website.
+- `artifacts/soma-nova/index.html` — page metadata and pre-launch noindex tag.
+- `artifacts/soma-nova/public/robots.txt` — pre-launch crawler block.
+- `artifacts/api-server/` — Express TypeScript API, with `/api/healthz`.
+- `lib/api-spec/openapi.yaml` — API contract.
+- `lib/api-client-react/` and `lib/api-zod/` — generated client and validation libraries.
+- `lib/db/` — unused database scaffold; no business tables or data.
+- `artifacts/mockup-sandbox/` — supplied component-preview scaffold, unused for this site.
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
-
-## User preferences
-
-_Populate as you build — explicit user instructions worth remembering across sessions._
-
-## Gotchas
-
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- Retain the supplied pnpm workspace and Express API scaffold, but do not add backend features for a static coming-soon page.
+- Use local system fonts and no third-party content requests on the placeholder.
+- Search-engine directives are not access control; do not put private information on the site.
 
 ## Pointers
 

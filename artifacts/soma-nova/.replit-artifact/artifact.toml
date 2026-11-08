@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Soma Nova"
+description = "Scaffold only for Soma Nova, a solo personal training business in Morgan Hill. A coming-soon placeholder held from launch pending explicit approval."
+version = "1.0.0"
+id = "artifacts/soma-nova"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 26231
+
+[services.development]
+run = "pnpm --filter @workspace/soma-nova run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/soma-nova", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/soma-nova/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "26231"
+BASE_PATH = "/"

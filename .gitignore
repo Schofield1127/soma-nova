@@ -53,3 +53,10 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Credentials must stay in Secrets, never in Git.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
