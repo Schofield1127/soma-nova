@@ -1,0 +1,30 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "abMULXYe-FMGinBl6wcga"
+uri = "file://generated-artifacts/soma-nova-desktop.jpg"
+type = "image"
+title = "Soma Nova — desktop homepage"
+description = "Homepage preview at 1440px wide, with labeled photo placeholders."
+logical_id = "7f2ef8c8-e920-49af-9f8e-a5fa66ee90e9"
+content_hash = "sha256:6edc28209aa5eaacf34c7ee069f4b69d9b1f53c26375e63068534c723e050f03"
+size = 86557
+mtime_ms = 1794238427051
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:30a1661e-e697-4340-8d11-ad5637b2f9f2/7f2ef8c8-e920-49af-9f8e-a5fa66ee90e9/e9e394fe-19ed-4215-a740-b6c472f14e37"
+storage_version_token = "1794238455815828"
+content_type = "image/jpeg"
+
+[[outputs]]
+id = "XMMOKbdT60mcB-9oavrIO"
+uri = "file://generated-artifacts/soma-nova-mobile.jpg"
+type = "image"
+title = "Soma Nova — mobile homepage"
+description = "Homepage preview at 375px wide, with labeled photo placeholders."
+logical_id = "b2aeb49f-1695-4e5c-a118-4e928b5a1381"
+content_hash = "sha256:e5685ebb7e42820c7d6c10445bf52099995107c87dce438219444c2238734ded"
+size = 58879
+mtime_ms = 1794238428491
+storage_uri = "gcs://replit-rams-assets-spock/rams/assets/repl:30a1661e-e697-4340-8d11-ad5637b2f9f2/b2aeb49f-1695-4e5c-a118-4e928b5a1381/bd1fceee-13df-4700-bdae-82f078b0977a"
+storage_version_token = "1794238456418775"
+content_type = "image/jpeg"
