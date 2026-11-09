@@ -42,7 +42,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 - Use verified legacy copy from `proteafitness.com` Home, About, `/whatido`, and `/happyclients` as the source; preserve testimonials verbatim except obvious typos, with first name and last initial only.
 - Emily will supply real photographs. Until then show labeled placeholder slots (`--plum` on orchid/charcoal, `--orchid` on blush), not licensed photos from the former site. The logo goes in `src/assets/logo/`.
 - Pricing stays hidden with `showPrices: false`. Future price rows use `TBD` until explicitly confirmed.
-- Do not invent the story behind the new name. Leave `TODO(Emily): why "Soma Nova"` for her.
+- Do not invent the story behind the new name. The About page's "Why Soma Nova" section (added at the user's request on 2026-11-09) states only the literal meaning (soma: Greek for body; nova: Latin for new). It is a draft for Emily to check or rewrite in her own words, marked `TODO(Emily)`. Don't add a personal backstory for her.
 - The Express API stays unchanged. Do not add backend features.
 
 ## Run & Operate
