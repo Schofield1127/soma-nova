@@ -219,6 +219,18 @@
 .menu-lines.is-open span:first-child { transform: translateY(5.5px) rotate(45deg); }
 .menu-lines.is-open span:last-child { transform: translateY(-5.5px) rotate(-45deg); }
 
+/* Closed menu button: three stacked dumbbells (owner request). Square plates are the
+   side borders, and the handle is the ::before bar. */
+.menu-dumbbells { display: inline-flex; flex-direction: column; gap: 5px; width: 36px; }
+.menu-dumbbells span {
+  position: relative; display: block; height: 11px;
+  border-left: 7px solid currentColor; border-right: 7px solid currentColor; border-radius: 1px;
+}
+.menu-dumbbells span::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 50%; height: 4px; margin-top: -2px;
+  background: currentColor;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .pattern-band.drift .pattern-img { animation: none; }

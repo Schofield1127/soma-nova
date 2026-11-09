@@ -3,7 +3,15 @@ import { Link, useLocation } from 'wouter';
 import { nav, site } from '@/content/site';
 import { Wordmark } from './Wordmark';
 import { DuotoneFilter } from './PatternBand';
-import { Accent } from './Accent';
+import { Accent, type AccentName } from './Accent';
+
+// A weight in front of each mobile menu item (owner request), alternating shapes.
+const MENU_ACCENTS: AccentName[] = ['kettlebell', 'dumbbell', 'plate', 'kettlebell', 'dumbbell'];
+const MENU_ACCENT_SIZE: Record<AccentName, string> = {
+  kettlebell: 'block w-8 h-10',
+  dumbbell: 'block w-12 h-8',
+  plate: 'block w-9 h-9',
+};
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -54,24 +62,35 @@ function Header() {
           onClick={() => setOpen((o) => !o)}
           data-testid="button-menu"
         >
-          <span className={`menu-lines ${open ? 'is-open text-white' : 'text-char'}`} aria-hidden="true">
-            <span />
-            <span />
-          </span>
+          {open ? (
+            <span className="menu-lines is-open text-white" aria-hidden="true">
+              <span />
+              <span />
+            </span>
+          ) : (
+            /* Three stacked dumbbells instead of plain menu lines (owner request). */
+            <span className="menu-dumbbells text-char" aria-hidden="true" data-testid="menu-dumbbells">
+              <span />
+              <span />
+              <span />
+            </span>
+          )}
         </button>
       </div>
 
       {open && (
         <div id="mobile-menu" className="s-char lg:hidden fixed inset-x-0 top-[4.75rem] bottom-0 overflow-y-auto" data-testid="menu-mobile">
           <nav aria-label="Mobile" onClick={() => setOpen(false)} className="wrap pt-6 pb-12 flex flex-col min-h-full">
-            <Link href="/" className={`font-display uppercase text-[3.4rem] leading-[1.05] py-1 no-underline ${location === '/' ? 'text-orchid' : 'text-white'}`} data-testid="link-mobile-home">Home</Link>
-            {nav.map((n) => (
+            {[{ href: '/', label: 'Home' }, ...nav].map((n, i) => (
               <Link
                 key={n.href}
                 href={n.href}
-                className={`font-display uppercase text-[3.4rem] leading-[1.05] py-1 no-underline ${location === n.href ? 'text-orchid' : 'text-white'}`}
-                data-testid={`link-mobile-${n.href.slice(1)}`}
+                className={`flex items-center gap-4 font-display uppercase text-[3.4rem] leading-[1.05] py-1 no-underline ${location === n.href ? 'text-orchid' : 'text-white'}`}
+                data-testid={n.href === '/' ? 'link-mobile-home' : `link-mobile-${n.href.slice(1)}`}
               >
+                <span className="w-12 flex justify-center flex-none">
+                  <Accent name={MENU_ACCENTS[i % MENU_ACCENTS.length]} className={MENU_ACCENT_SIZE[MENU_ACCENTS[i % MENU_ACCENTS.length]]} />
+                </span>
                 {n.label}
               </Link>
             ))}
@@ -94,7 +113,7 @@ function Footer() {
       <div className="wrap py-16 md:py-24 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <Wordmark tone="orchid" testId="link-footer-home" />
-          <p className="mt-6 label accent-label"><Accent name="kettlebell" className="w-5 h-6" testId="accent-footer" />Formerly Protea Fitness</p>
+          <p className="mt-6 label accent-label"><Accent name="plate" className="w-5 h-5" testId="accent-footer" />Formerly Protea Fitness</p>
         </div>
         <div className="md:col-span-4 text-[16px] flex flex-col gap-2.5">
           <p className="muted">{site.city}</p>
