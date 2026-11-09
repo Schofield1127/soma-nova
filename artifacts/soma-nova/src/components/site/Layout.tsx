@@ -62,19 +62,13 @@ function Header() {
           onClick={() => setOpen((o) => !o)}
           data-testid="button-menu"
         >
-          {open ? (
-            <span className="menu-lines is-open text-white" aria-hidden="true">
-              <span />
-              <span />
-            </span>
-          ) : (
-            /* Three stacked dumbbells instead of plain menu lines (owner request). */
-            <span className="menu-dumbbells text-char" aria-hidden="true" data-testid="menu-dumbbells">
-              <span />
-              <span />
-              <span />
-            </span>
-          )}
+          {/* Three stacked dumbbells (owner request). When the menu opens, the outer two
+              swing into an X and the middle one fades out. */}
+          <span className={`menu-dumbbells ${open ? 'is-open text-white' : 'text-char'}`} aria-hidden="true" data-testid="menu-dumbbells">
+            <span />
+            <span />
+            <span />
+          </span>
         </button>
       </div>
 
