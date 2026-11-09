@@ -4,20 +4,90 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Soma Nova | Personal training in Morgan Hill, CA</title>
-    <meta name="description" content="One-on-one personal training with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA. Free 30-minute consult." />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="One-on-one personal training with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult." />
+    <!-- The build sets this from INDEXABLE in seo.config.ts. Don't edit it here. -->
+    <meta name="robots" content="%SEO_ROBOTS%" />
+    <link rel="canonical" href="%SEO_SITE_URL%/" />
     <meta name="theme-color" content="#E37CD2" />
-    <meta property="og:title" content="Soma Nova | Personal training in Morgan Hill, CA" />
-    <meta property="og:description" content="One-on-one personal training in a private studio in Morgan Hill, CA." />
+
+    <link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48" />
+    <link rel="icon" href="/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Soma Nova" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="%SEO_SITE_URL%/" />
+    <meta property="og:title" content="Soma Nova | Personal training in Morgan Hill, CA" />
+    <meta property="og:description" content="One-on-one personal training with Emily Schofield in a private studio in Morgan Hill, CA. Formerly Protea Fitness." />
+    <meta property="og:image" content="%SEO_SITE_URL%%SEO_OG_IMAGE%" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="%SEO_OG_IMAGE_ALT%" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Soma Nova | Personal training in Morgan Hill, CA" />
+    <meta name="twitter:description" content="One-on-one personal training with Emily Schofield in a private studio in Morgan Hill, CA. Formerly Protea Fitness." />
+    <meta name="twitter:image" content="%SEO_SITE_URL%%SEO_OG_IMAGE%" />
+
+    <!-- No street address, map pin or coordinates: the studio is at home. City only. -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Soma Nova",
-        "telephone": "+1-408-705-7176",
-        "address": { "@type": "PostalAddress", "addressLocality": "Morgan Hill", "addressRegion": "CA", "addressCountry": "US" },
-        "areaServed": { "@type": "City", "name": "Morgan Hill, CA" }
+        "@graph": [
+          {
+            "@type": "HealthClub",
+            "@id": "%SEO_SITE_URL%/#business",
+            "name": "Soma Nova",
+            "alternateName": "Protea Fitness",
+            "description": "One-on-one personal training and nutrition coaching with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA.",
+            "url": "%SEO_SITE_URL%/",
+            "image": "%SEO_SITE_URL%%SEO_OG_IMAGE%",
+            "logo": "%SEO_SITE_URL%/apple-touch-icon.png",
+            "telephone": "+1-408-705-7176",
+            "email": "proteafitness.morganhill@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Morgan Hill",
+              "addressRegion": "CA",
+              "addressCountry": "US"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Morgan Hill",
+              "containedInPlace": { "@type": "State", "name": "California" }
+            },
+            "founder": { "@id": "%SEO_SITE_URL%/#emily" },
+            "employee": { "@id": "%SEO_SITE_URL%/#emily" },
+            "knowsAbout": [
+              "Personal training",
+              "Corrective exercise",
+              "Strength training",
+              "Nutrition coaching",
+              "Prenatal and postnatal fitness",
+              "Senior fitness"
+            ],
+            "sameAs": ["https://www.instagram.com/protea_fitness/"]
+          },
+          {
+            "@type": "Person",
+            "@id": "%SEO_SITE_URL%/#emily",
+            "name": "Emily Schofield",
+            "jobTitle": "Personal trainer and nutrition coach",
+            "url": "%SEO_SITE_URL%/about",
+            "worksFor": { "@id": "%SEO_SITE_URL%/#business" },
+            "hasCredential": [
+              { "@type": "EducationalOccupationalCredential", "name": "NASM Certified Personal Trainer (CPT)" },
+              { "@type": "EducationalOccupationalCredential", "name": "NASM Certified Nutrition Coach (CNC)" }
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "%SEO_SITE_URL%/#website",
+            "name": "Soma Nova",
+            "url": "%SEO_SITE_URL%/",
+            "publisher": { "@id": "%SEO_SITE_URL%/#business" }
+          }
+        ]
       }
     </script>
   </head>

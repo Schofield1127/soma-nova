@@ -20,7 +20,7 @@ const steps = [
 export default function Home() {
   useSeo(
     'Soma Nova | Personal training in Morgan Hill, CA',
-    'One-on-one personal training with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA. Free 30-minute consult.',
+    'One-on-one personal training with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
   );
   return (
     <>

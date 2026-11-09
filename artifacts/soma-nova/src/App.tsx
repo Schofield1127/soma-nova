@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
+import { Redirect, Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Layout } from '@/components/site/Layout';
 import Home from '@/pages/home';
@@ -19,6 +19,9 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/kind-words" component={KindWords} />
           <Route path="/contact" component={Contact} />
+          {/* Old proteafitness.com paths, in case a redirect keeps the path. */}
+          <Route path="/whatido"><Redirect to="/training" replace /></Route>
+          <Route path="/happyclients"><Redirect to="/kind-words" replace /></Route>
           <Route component={NotFound} />
         </Switch>
       </RoutedErrorBoundary>
