@@ -1,4 +1,4 @@
-import { testimonials } from '@/content/site';
+import { site, testimonials } from '@/content/site';
 import { Reveal } from '@/components/site/Reveal';
 import { ClosingBand } from '@/components/site/ClosingBand';
 import { useSeo } from '@/components/site/useSeo';
@@ -12,6 +12,10 @@ export default function KindWords() {
           <p className="label">Kind words</p>
           <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[7.5rem] max-w-[12ch]">What people are saying.</h1>
           <p className="mt-6 measure font-medium">In their own words. These were written when the studio was still called Protea Fitness.</p>
+          <p className="mt-5 flex flex-wrap gap-x-6 gap-y-2">
+            <a href={site.googleUrl} className="tlink" rel="noopener" data-testid="link-kind-google">Read reviews on Google</a>
+            <a href={site.yelpUrl} className="tlink" rel="noopener" data-testid="link-kind-yelp">Read reviews on Yelp</a>
+          </p>
         </div>
       </section>
       <section className="s-blush py-8 md:py-16">

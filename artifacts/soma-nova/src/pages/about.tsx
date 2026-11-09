@@ -6,7 +6,7 @@ import { Accent } from '@/components/site/Accent';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function About() {
-  useSeo('About Emily | Soma Nova, Morgan Hill', 'Emily Schofield is a NASM Certified Personal Trainer and Certified Wellness Coach training clients one-on-one in Morgan Hill, CA.');
+  useSeo('About Emily | Soma Nova, Morgan Hill', 'Emily Schofield is a NASM Certified Personal Trainer and NASM Certified Wellness Coach training clients one-on-one in Morgan Hill, CA.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-20 md:pb-28">
@@ -19,10 +19,10 @@ export default function About() {
           <div className="md:col-span-6 md:col-start-7 order-1 md:order-2">
             <p className="label">About Emily</p>
             <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[6.5rem]">Hi, I&rsquo;m Emily Schofield.</h1>
-            <p className="mt-5 label">NASM Certified Personal Trainer · Certified Wellness Coach</p>
+            <p className="mt-5 label">NASM Certified Personal Trainer · NASM Certified Wellness Coach</p>
 
             <div className="mt-10 measure prose-soft font-medium text-[1.05rem] md:text-[1.1rem]">
-              <p>I&rsquo;m certified through the National Academy of Sports Medicine in personal training, I&rsquo;m a certified wellness coach, and I keep learning about wellness all the time. This work is my passion, especially when a client cares about their long-term health. I can help you with how you look, but my heart is in helping you make lifestyle changes for a better quality of life.</p>
+              <p>I&rsquo;m certified through the National Academy of Sports Medicine in personal training and wellness coaching, and I keep learning about wellness all the time. This work is my passion, especially when a client cares about their long-term health. I can help you with how you look, but my heart is in helping you make lifestyle changes for a better quality of life.</p>
               <p>I&rsquo;m a busy mom with a chronic illness, so I really do understand how hard it can be to take charge of your health. I will never judge you, push you to injury, or shame you. I will <em>always</em> draw out your personal best.</p>
               <p>My job is to guide you safely toward a purpose, not to sell you endless sessions. Whether it&rsquo;s losing weight, getting stronger or something else entirely, let&rsquo;s work on it together. I know you can do it.</p>
             </div>
