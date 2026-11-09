@@ -20,7 +20,7 @@ const steps = [
 export default function Home() {
   useSeo(
     'Soma Nova | Personal training in Morgan Hill, CA',
-    'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
+    'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer and Certified Wellness Coach, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
   );
   return (
     <>
@@ -98,9 +98,9 @@ export default function Home() {
           </div>
           <Reveal className="md:col-span-6 md:col-start-7">
             <h2 className="text-plum-ink text-[3.6rem] md:text-[6rem]">Hi, I&rsquo;m Emily.</h2>
-            <p className="mt-5 label">NASM Certified Personal Trainer</p>
+            <p className="mt-5 label">NASM Certified Personal Trainer · Certified Wellness Coach</p>
             <div className="mt-6 measure prose-soft font-medium">
-              <p>I&rsquo;m a NASM Certified Personal Trainer. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
+              <p>I&rsquo;m a NASM Certified Personal Trainer and a Certified Wellness Coach. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
               <p>I will never shame you or push you to injury. I will always help you find your personal best.</p>
             </div>
             <Link href="/about" className="tlink inline-block mt-7" data-testid="link-more-about">More about Emily</Link>
