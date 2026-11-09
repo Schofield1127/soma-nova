@@ -127,7 +127,7 @@ function Footer() {
             </Link>
           ))}
         </nav>
-        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] muted">&copy; {year} Soma Nova. Emily Schofield, NASM CPT, CNC.</p>
+        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] muted">&copy; {year} Soma Nova. Emily Schofield, NASM CPT, Certified Wellness Coach.</p>
       </div>
     </footer>
   );
