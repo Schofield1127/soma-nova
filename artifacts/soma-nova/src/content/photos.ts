@@ -2,7 +2,9 @@
 // To fill a slot, add a real photo to src/assets/photos/ named `<file>.<jpg|jpeg|png|webp|avif>`.
 // Real photos of Emily and the studio only: no stock, AI-generated or old iStock images.
 
-export type PhotoSlotId = 'hero' | 'portrait' | 'studioDetail' | 'coaching' | 'studioWide';
+// The logo is not a photo slot: drop it into src/assets/logo/ (see Wordmark.tsx).
+
+export type PhotoSlotId = 'patternHero' | 'hero' | 'portrait' | 'studioDetail' | 'coaching' | 'studioWide';
 
 export type PhotoSlot = {
   file: string;
@@ -18,6 +20,16 @@ export type PhotoSlot = {
 };
 
 export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
+  // Signature element. Shown as a plum/orchid duotone (see PatternBand.tsx), so color doesn't matter.
+  // Must be Emily's own photo: not the old site's licensed stock, not AI, not a drawing.
+  patternHero: {
+    file: 'pattern-hero',
+    alt: '',
+    shows: 'Top-down shot of real dumbbells laid out in diagonal rows',
+    ratio: 'wide, 3:1 or wider, at least 2400px',
+    width: 3000,
+    height: 1000,
+  },
   hero: {
     file: 'hero',
     mobileFile: 'hero-mobile',
