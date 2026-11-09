@@ -20,7 +20,7 @@ const steps = [
 export default function Home() {
   useSeo(
     'Soma Nova | Personal training in Morgan Hill, CA',
-    'One-on-one personal training with Emily Schofield, NASM CPT and CNC, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
+    'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
   );
   return (
     <>
@@ -52,7 +52,7 @@ export default function Home() {
           <div className="md:col-span-6">
             <h2 className="text-white text-[3.6rem] md:text-[6rem]">Invest in yourself.</h2>
             <div className="mt-8 measure text-[1.1rem] md:text-[1.2rem] leading-[1.65] prose-soft">
-              <p>Taking care of yourself takes time, and it&rsquo;s worth it. I offer a mix of exercise, mindful practice and nutrition coaching, so you can learn to look after every part of your own body.</p>
+              <p>Taking care of yourself takes time, and it&rsquo;s worth it. I offer a mix of exercise and mindful practice, so you can learn to look after every part of your own body.</p>
               <p className="muted">It&rsquo;s just you and me in the room. Nobody watching, nobody comparing.</p>
             </div>
           </div>
@@ -98,9 +98,9 @@ export default function Home() {
           </div>
           <Reveal className="md:col-span-6 md:col-start-7">
             <h2 className="text-plum-ink text-[3.6rem] md:text-[6rem]">Hi, I&rsquo;m Emily.</h2>
-            <p className="mt-5 label">NASM CPT · NASM CNC</p>
+            <p className="mt-5 label">NASM Certified Personal Trainer</p>
             <div className="mt-6 measure prose-soft font-medium">
-              <p>I&rsquo;m a NASM Certified Personal Trainer and Certified Nutrition Coach. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
+              <p>I&rsquo;m a NASM Certified Personal Trainer. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
               <p>I will never shame you or push you to injury. I will always help you find your personal best.</p>
             </div>
             <Link href="/about" className="tlink inline-block mt-7" data-testid="link-more-about">More about Emily</Link>
