@@ -49,15 +49,6 @@ export const services: Service[] = [
     ],
   },
   {
-    id: 'nutrition',
-    name: 'Nutrition coaching',
-    short: 'Help getting past fad diets and nutrition myths, so you can make informed food choices that support your goals.',
-    long: [
-      'As a certified nutrition coach, I can help you navigate past fad diets and nutrition myths.',
-      'The point is for you to make educated choices that support your own goals. No shame, and no one-size-fits-all meal plan.',
-    ],
-  },
-  {
     id: 'special',
     name: 'Special circumstances',
     short: 'Chronic illness, pre and postnatal, seniors, youth, and clients coming out of physical therapy.',

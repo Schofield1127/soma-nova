@@ -43,7 +43,7 @@ export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
   },
   portrait: {
     file: 'portrait',
-    alt: 'Portrait of Emily Schofield, personal trainer and nutrition coach',
+    alt: 'Portrait of Emily Schofield, personal trainer',
     shows: 'Relaxed portrait of Emily, not a gym selfie',
     ratio: '4:5',
     width: 1200,
