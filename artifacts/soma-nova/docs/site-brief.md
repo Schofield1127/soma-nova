@@ -8,7 +8,7 @@ Build the real website for **Soma Nova** in the existing `artifacts/soma-nova` R
 
 ## What this is
 
-Soma Nova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and a Certified Wellness Coach. (She no longer offers nutrition coaching as of 2026-11-09.) She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
+Soma Nova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and a NASM Certified Wellness Coach. (She no longer offers nutrition coaching as of 2026-11-09.) She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
 
 Open proteafitness.com (Home, About, Services at /whatido, Happy Clients at /happyclients) and use it as the content template. Keep its structure, its warmth and its plain, personal voice. Modernize it and make it feel like a small boutique studio, not a gym chain or a tech startup.
 
