@@ -2,6 +2,7 @@ import { Link } from 'wouter';
 import { Photo } from '@/components/site/Photo';
 import { Reveal } from '@/components/site/Reveal';
 import { ClosingBand } from '@/components/site/ClosingBand';
+import { Accent } from '@/components/site/Accent';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function About() {
@@ -21,13 +22,38 @@ export default function About() {
             <p className="mt-5 label">NASM CPT · NASM CNC</p>
 
             <div className="mt-10 measure prose-soft font-medium text-[1.05rem] md:text-[1.1rem]">
-              {/* TODO(Emily): why "Soma Nova" — add one or two sentences on the new name here. Do not invent this story. */}
               <p>I&rsquo;m certified through the National Academy of Sports Medicine in both personal training and nutrition coaching, and I keep learning about wellness all the time. This work is my passion, especially when a client cares about their long-term health. I can help you with how you look, but my heart is in helping you make lifestyle changes for a better quality of life.</p>
               <p>I&rsquo;m a busy mom with a chronic illness, so I really do understand how hard it can be to take charge of your health. I will never judge you, push you to injury, or shame you. I will <em>always</em> draw out your personal best.</p>
               <p>My job is to guide you safely toward a purpose, not to sell you endless sessions. Whether it&rsquo;s losing weight, getting stronger or something else entirely, let&rsquo;s work on it together. I know you can do it.</p>
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Why "Soma Nova". Draft added at the owner's request on 2026-11-09: it states only the literal meaning.
+          TODO(Emily): check this or rewrite it in your own words, and add your personal reason for the name if you like. */}
+      <section className="s-blush py-20 md:py-28" aria-labelledby="name-h" data-testid="section-why-name">
+        <Reveal className="wrap grid md:grid-cols-12 gap-10 md:gap-8">
+          <div className="md:col-span-5">
+            <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />Why &ldquo;Soma Nova&rdquo;</p>
+            <h2 id="name-h" className="mt-4 text-[3.6rem] md:text-[6rem]">Body. New.</h2>
+          </div>
+          <div className="md:col-span-6 md:col-start-7">
+            <dl className="m-0 border-t-2 border-plum">
+              <div className="py-5 border-b border-rule grid grid-cols-[7rem_1fr] md:grid-cols-[9rem_1fr] gap-4 items-baseline">
+                <dt className="font-display text-magenta text-[2.4rem] md:text-[3rem] leading-none">Soma</dt>
+                <dd className="m-0">Greek for &ldquo;body.&rdquo;</dd>
+              </div>
+              <div className="py-5 border-b border-rule grid grid-cols-[7rem_1fr] md:grid-cols-[9rem_1fr] gap-4 items-baseline">
+                <dt className="font-display text-magenta text-[2.4rem] md:text-[3rem] leading-none">Nova</dt>
+                <dd className="m-0">Latin for &ldquo;new.&rdquo;</dd>
+              </div>
+            </dl>
+            <p className="mt-8 measure text-[1.1rem] md:text-[1.15rem] font-medium">
+              Put together, it means a new body. Not someone else&rsquo;s body. Your own, approached in a new way.
+            </p>
+          </div>
+        </Reveal>
       </section>
 
       <section className="s-char py-20 md:py-28">
