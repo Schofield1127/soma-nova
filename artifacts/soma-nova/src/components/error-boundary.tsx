@@ -37,18 +37,18 @@ function toError(value: unknown): Error {
 
 function DefaultFallback({ error, resetError }: ErrorFallbackProps) {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-paper p-6">
+    <div className="min-h-screen w-full flex items-center justify-center s-blush p-6">
       <div className="max-w-lg w-full text-center">
-        <h1 className="font-serif text-2xl text-ink">
+        <h1 className="font-display text-4xl text-char">
           Something went wrong
         </h1>
-        <p className="mt-2 text-stone">
+        <p className="mt-2 muted">
           This part of the app hit an error. The rest of the app is still
           running.
         </p>
         {/* Dev only: messages can carry API responses and other internals. */}
         {import.meta.env.DEV ? (
-          <pre className="mt-4 overflow-x-auto bg-sand p-3 text-left text-xs text-ink">
+          <pre className="mt-4 overflow-x-auto bg-white p-3 text-left text-xs text-char">
             {error.message || String(error)}
           </pre>
         ) : null}
