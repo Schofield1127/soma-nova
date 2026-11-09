@@ -210,6 +210,8 @@
 /* Gym-weight accents (Accent.tsx). Painted in the section's accent color through a mask. */
 .accent-mark { display: inline-block; flex: none; background-color: var(--accent); vertical-align: middle; }
 .accent-label { display: inline-flex; align-items: center; gap: 0.6em; }
+/* Scattered weights in the hero band: plum on orchid, inset so nothing clips at the edges. */
+.accent-scatter { position: absolute; inset: 0 2.5rem 2.5rem 0; --accent: var(--plum); }
 
 /* Hamburger: two bold lines. */
 .menu-lines { display: inline-flex; flex-direction: column; gap: 7px; width: 34px; }
