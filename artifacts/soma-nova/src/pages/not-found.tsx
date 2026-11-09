@@ -2,7 +2,7 @@ import { Link } from 'wouter';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function NotFound() {
-  useSeo('Page not found | Soma Nova', 'This page does not exist.');
+  useSeo('Page not found | Soma Nova', 'This page does not exist.', { notFound: true });
   return (
     <section className="s-orchid py-24 md:py-40">
       <div className="wrap">

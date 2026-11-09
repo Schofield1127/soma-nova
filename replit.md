@@ -6,7 +6,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 
 - The user has approved building the real website, but has NOT approved launch.
 - The approved website brief is `artifacts/soma-nova/docs/site-brief.md`. Follow its content, design, photography, pricing, and technical rules in future sessions.
-- Keep the HTML robots tag set to `noindex, nofollow` and `public/robots.txt` disallowing all crawlers until the user explicitly approves launch.
+- Keep `INDEXABLE = false` in `artifacts/soma-nova/seo.config.ts` until the user explicitly approves launch. It drives the robots meta tag, `robots.txt` and the sitemap line in robots.txt; don't hand-edit those.
 - Do not publish, deploy, connect a domain, or buy anything without explicit user approval.
 - Do not add analytics, tracking pixels, or any third-party embeds without approval.
 
@@ -70,8 +70,10 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 ## Where things live
 
 - `artifacts/soma-nova/` — React + Vite TypeScript website.
-- `artifacts/soma-nova/index.html` — page metadata and pre-launch noindex tag.
-- `artifacts/soma-nova/public/robots.txt` — pre-launch crawler block.
+- `artifacts/soma-nova/seo.config.ts` — canonical domain, the `INDEXABLE` launch switch, sitemap routes, share image.
+- `artifacts/soma-nova/index.html` — default meta, Open Graph/Twitter tags and JSON-LD (city only, never a street address). `%SEO_*%` placeholders are filled by the `seo()` plugin in `vite.config.ts`, which also generates `robots.txt` and `sitemap.xml`.
+- `artifacts/soma-nova/src/components/site/useSeo.ts` — per-page title, description, canonical and social tags.
+- `artifacts/soma-nova/public/` — `og-image.png` (1200x630 share card) and the favicons.
 - `artifacts/api-server/` — Express TypeScript API, with `/api/healthz`.
 - `lib/api-spec/openapi.yaml` — API contract.
 - `lib/api-client-react/` and `lib/api-zod/` — generated client and validation libraries.
