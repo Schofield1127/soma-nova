@@ -1,38 +1,28 @@
 import { type ReactNode } from 'react';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { Route, Switch, useLocation, Router as WouterRouter } from 'wouter';
 import { ErrorBoundary } from '@/components/error-boundary';
-import { Toaster } from '@/components/ui/toaster';
-import { TooltipProvider } from '@/components/ui/tooltip';
+import { Layout } from '@/components/site/Layout';
+import Home from '@/pages/home';
+import Training from '@/pages/training';
+import About from '@/pages/about';
+import KindWords from '@/pages/kind-words';
+import Contact from '@/pages/contact';
 import NotFound from '@/pages/not-found';
-import {
-  Route,
-  Switch,
-  useLocation,
-  Router as WouterRouter,
-} from 'wouter';
-
-const queryClient = new QueryClient();
-
-function Home() {
-  return (
-    <main className="min-h-[100dvh] w-full flex items-center justify-center px-6">
-      <p data-testid="text-coming-soon" className="max-w-md text-center text-base leading-relaxed tracking-wide text-muted-foreground">
-        <span className="text-foreground">Soma Nova</span>, personal training in Morgan Hill. Coming soon.
-      </p>
-    </main>
-  );
-}
 
 function Router() {
   return (
-    // Keep a shared shell (sidebar, navbar) outside the boundary so it
-    // survives a page crash.
-    <RoutedErrorBoundary>
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-    </RoutedErrorBoundary>
+    <Layout>
+      <RoutedErrorBoundary>
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/training" component={Training} />
+          <Route path="/about" component={About} />
+          <Route path="/kind-words" component={KindWords} />
+          <Route path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </RoutedErrorBoundary>
+    </Layout>
   );
 }
 
@@ -43,14 +33,9 @@ function RoutedErrorBoundary({ children }: { children: ReactNode }) {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-          <Router />
-        </WouterRouter>
-        <Toaster />
-      </TooltipProvider>
-    </QueryClientProvider>
+    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <Router />
+    </WouterRouter>
   );
 }
 

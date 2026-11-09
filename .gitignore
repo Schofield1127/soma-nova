@@ -60,3 +60,6 @@ Thumbs.db
 !.env.example
 *.pem
 *.key
+
+# Generated screenshots and reports
+/generated-artifacts/
