@@ -1,21 +1,24 @@
 /*
-  Generate texture and pattern images with the OpenAI Images API.
+  Generate textures, patterns and small gym-weight accents with the OpenAI Images API.
 
-  Textures and patterns ONLY: no people, no faces, no bodies, nothing that
-  stands in for Emily or a client, no logos, no text. Real photos of Emily,
-  clients, the studio and the dumbbell pattern (`pattern-hero`) stay real.
+  Allowed: textures and patterns, and (owner-approved 2026-11-09) small flat
+  silhouettes of gym weights used as accents (dumbbell, kettlebell, weight plate).
+  Never: people, faces, bodies, hands, anything that stands in for Emily or a
+  client, logos or text. Real photos of Emily, clients, the studio and the
+  dumbbell pattern (`pattern-hero`) stay real.
 
-  Output goes to generated-artifacts/textures/ (git-ignored) for review.
-  Nothing here is wired into the site. Using a generated image anywhere
-  needs the owner's explicit OK first (see replit.md).
+  Output goes to generated-artifacts/ (git-ignored) for review. Copy an image
+  into the site only with the owner's OK (see replit.md).
 
-  Key: set OPENAI_API_KEY in Replit Secrets (a Soma Nova key, not The Wheel Guys').
+  Key: OPENAI_API_KEY in Replit Secrets (the Soma Nova key, not The Wheel Guys').
 
   Usage:
     pnpm --filter @workspace/scripts run texture -- --list
     pnpm --filter @workspace/scripts run texture -- --preset orchid-grain --dry-run
-    pnpm --filter @workspace/scripts run texture -- --preset rubber-floor
+    pnpm --filter @workspace/scripts run texture -- --accent dumbbell --quality medium
     pnpm --filter @workspace/scripts run texture -- --prompt "chalk dust on black rubber" --quality medium
+  Without pnpm (Node 23.6+ runs TypeScript directly):
+    node scripts/src/generate-texture.ts --accent dumbbell
 */
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -38,10 +41,18 @@ const APPROX_COST: Record<Quality, Record<Size, number>> = {
 const PALETTE =
   'Use only these colors: orchid pink #E37CD2, plum #5F3857, deep plum #3A1F36, charcoal #1C1A1F, blush #FBF4FA.';
 
-const GUARD =
+const NO_PEOPLE =
+  'No people, no faces, no hands, no bodies, no silhouettes of people, no animals, no text, no letters, ' +
+  'no numbers, no logos, no watermarks.';
+
+const TEXTURE_GUARD =
   'Flat, seamless, tileable texture filling the whole frame. Abstract surface or material only. ' +
-  'No people, no faces, no hands, no bodies, no silhouettes, no animals, no text, no letters, no numbers, ' +
-  'no logos, no watermarks, no gradients, no glow, no bokeh, no 3D render look.';
+  `${NO_PEOPLE} No gradients, no glow, no bokeh, no 3D render look.`;
+
+const ACCENT_GUARD =
+  'Flat vector-style silhouette in ONE solid color, charcoal #1C1A1F, centered and filling about 80% of the frame, ' +
+  'on a fully transparent background. Bold simple geometric shapes, crisp edges, no outline-only strokes, ' +
+  `no shading, no highlights, no gradients, no shadow, no floor, no background. ${NO_PEOPLE}`;
 
 export const PRESETS: Record<string, { prompt: string; size: Size }> = {
   'orchid-grain': {
@@ -70,7 +81,22 @@ export const PRESETS: Record<string, { prompt: string; size: Size }> = {
   },
 };
 
-// Prompts that would produce people or stand in for Emily are refused outright.
+// Small accents. The site recolors them with CSS masks, so only the shape matters.
+export const ACCENTS: Record<string, { prompt: string; size: Size }> = {
+  dumbbell: {
+    prompt: 'A single hex dumbbell seen exactly from the side, horizontal, two chunky hexagonal heads and a short straight handle.',
+    size: '1536x1024',
+  },
+  kettlebell: {
+    prompt: 'A single kettlebell seen exactly from the front, round bell with a thick arched handle on top, upright.',
+    size: '1024x1024',
+  },
+  plate: {
+    prompt: 'A single round barbell weight plate seen exactly from the front, flat disc with a small center hole and one inner ring.',
+    size: '1024x1024',
+  },
+};
+
 // Whole words only, so "texture" or "handle" are fine but "text" or "hand" are not.
 const BLOCKED = [
   'person', 'people', 'woman', 'women', 'man', 'men', 'girl', 'boy', 'lady', 'guy', 'face', 'portrait',
@@ -81,10 +107,13 @@ const BLOCKED_RE = new RegExp(`\\b(${BLOCKED.join('|')})(s|es)?\\b`, 'i');
 
 export function checkPrompt(prompt: string): string | null {
   const hit = prompt.match(BLOCKED_RE);
-  return hit ? `Refusing: prompt mentions "${hit[0]}". This script makes textures and patterns only.` : null;
+  return hit ? `Refusing: prompt mentions "${hit[0]}". This script makes textures, patterns and weight accents only.` : null;
 }
 
-type Args = { preset?: string; prompt?: string; quality: Quality; size?: Size; n: number; dryRun: boolean; list: boolean; name?: string };
+type Args = {
+  preset?: string; accent?: string; prompt?: string; quality: Quality; size?: Size;
+  n: number; dryRun: boolean; list: boolean; name?: string;
+};
 
 function parseArgs(argv: string[]): Args {
   const a: Args = { quality: 'low', n: 1, dryRun: false, list: false };
@@ -96,6 +125,7 @@ function parseArgs(argv: string[]): Args {
       return val;
     };
     if (k === '--preset') a.preset = v();
+    else if (k === '--accent') a.accent = v();
     else if (k === '--prompt') a.prompt = v();
     else if (k === '--quality') a.quality = v() as Quality;
     else if (k === '--size') a.size = v() as Size;
@@ -106,6 +136,7 @@ function parseArgs(argv: string[]): Args {
     else if (k === '--') continue;
     else throw new Error(`Unknown argument: ${k}`);
   }
+  if ([a.preset, a.accent, a.prompt].filter(Boolean).length > 1) throw new Error('Use only one of --preset, --accent or --prompt');
   if (!['low', 'medium', 'high'].includes(a.quality)) throw new Error('--quality must be low, medium or high');
   if (a.size && !['1024x1024', '1536x1024', '1024x1536'].includes(a.size)) throw new Error('--size must be 1024x1024, 1536x1024 or 1024x1536');
   if (!Number.isInteger(a.n) || a.n < 1 || a.n > MAX_IMAGES_PER_RUN) throw new Error(`--n must be 1 to ${MAX_IMAGES_PER_RUN}`);
@@ -115,24 +146,30 @@ function parseArgs(argv: string[]): Args {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
 
-  if (args.list || (!args.preset && !args.prompt)) {
-    console.log('Presets:');
+  if (args.list || (!args.preset && !args.prompt && !args.accent)) {
+    console.log('Texture presets (--preset):');
     for (const [k, p] of Object.entries(PRESETS)) console.log(`  ${k.padEnd(14)} ${p.size}  ${p.prompt.split('.')[0]}`);
-    console.log('\nUse --preset <name> or --prompt "<texture description>". Add --dry-run to see the request and cost first.');
+    console.log('\nAccents (--accent), transparent PNG silhouettes:');
+    for (const [k, p] of Object.entries(ACCENTS)) console.log(`  ${k.padEnd(14)} ${p.size}  ${p.prompt.split(',')[0]}`);
+    console.log('\nOr --prompt "<texture description>". Add --dry-run to see the request and cost first.');
     return;
   }
 
   const preset = args.preset ? PRESETS[args.preset] : undefined;
   if (args.preset && !preset) throw new Error(`Unknown preset "${args.preset}". Run with --list.`);
-  const base = preset ? preset.prompt : `${args.prompt}. ${PALETTE}`;
+  const accent = args.accent ? ACCENTS[args.accent] : undefined;
+  if (args.accent && !accent) throw new Error(`Unknown accent "${args.accent}". Run with --list.`);
   const refusal = checkPrompt(args.prompt ?? '');
   if (refusal) throw new Error(refusal);
-  const prompt = `${base} ${GUARD}`;
-  const size: Size = args.size ?? preset?.size ?? '1024x1024';
+
+  const prompt = accent
+    ? `${accent.prompt} ${ACCENT_GUARD}`
+    : `${preset ? preset.prompt : `${args.prompt}. ${PALETTE}`} ${TEXTURE_GUARD}`;
+  const size: Size = args.size ?? accent?.size ?? preset?.size ?? '1024x1024';
   const estimate = APPROX_COST[args.quality][size] * args.n;
 
   console.log(`Model:    ${MODEL}`);
-  console.log(`Size:     ${size}, quality ${args.quality}, ${args.n} image(s)`);
+  console.log(`Size:     ${size}, quality ${args.quality}, ${args.n} image(s)${accent ? ', transparent background' : ''}`);
   console.log(`Estimate: about $${estimate.toFixed(3)}`);
   console.log(`Prompt:   ${prompt}`);
   if (args.dryRun) { console.log('\nDry run: nothing sent.'); return; }
@@ -140,10 +177,13 @@ async function main() {
   const key = process.env.OPENAI_API_KEY;
   if (!key) throw new Error('OPENAI_API_KEY is not set. Add it in Replit Secrets (never in code).');
 
+  const request: Record<string, unknown> = { model: MODEL, prompt, size, quality: args.quality, n: args.n, output_format: 'png' };
+  if (accent) request.background = 'transparent';
+
   const res = await fetch(API_URL, {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ model: MODEL, prompt, size, quality: args.quality, n: args.n, output_format: 'png' }),
+    body: JSON.stringify(request),
   });
   const body = (await res.json().catch(() => ({}))) as {
     data?: { b64_json?: string; url?: string }[];
@@ -152,10 +192,10 @@ async function main() {
   if (!res.ok) throw new Error(`OpenAI error ${res.status}: ${body.error?.message ?? 'unknown error'}`);
 
   const here = path.dirname(fileURLToPath(import.meta.url));
-  const outDir = path.resolve(here, '..', '..', 'generated-artifacts', 'textures');
+  const outDir = path.resolve(here, '..', '..', 'generated-artifacts', accent ? 'accents' : 'textures');
   await mkdir(outDir, { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
-  const slug = (args.name ?? args.preset ?? 'custom').replace(/[^a-z0-9-]/gi, '-').toLowerCase();
+  const slug = (args.name ?? args.accent ?? args.preset ?? 'custom').replace(/[^a-z0-9-]/gi, '-').toLowerCase();
 
   let saved = 0;
   for (const [i, img] of (body.data ?? []).entries()) {
