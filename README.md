@@ -9,7 +9,7 @@ Website for Soma Nova, Emily Schofield's one-on-one personal training business i
 - Express API server in `artifacts/api-server`, with `GET /api/healthz`.
 - Home, Training, About, Kind Words, and Contact pages.
 - Local photo slots awaiting Emily's real photographs.
-- Self-hosted Fraunces and Inter fonts.
+- Self-hosted Anton and Inter fonts (design v3: orchid + charcoal; rules in replit.md and the site brief).
 - Config-driven pricing hidden until approved.
 - Pre-launch `noindex, nofollow` metadata and a `robots.txt` that disallows all crawlers.
 - Business facts, privacy requirements, and approval rules in `replit.md`.

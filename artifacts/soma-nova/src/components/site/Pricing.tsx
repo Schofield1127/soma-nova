@@ -1,24 +1,25 @@
 import { pricing } from '@/content/pricing';
 import { ConsultButton } from './Actions';
 
+// Styled for the blush section. Prices stay hidden while pricing.showPrices is false.
 export function Pricing() {
   return (
     <div className="grid md:grid-cols-12 gap-8 md:gap-12">
-      <div className="md:col-span-4">
+      <div className="md:col-span-5">
         <p className="label">Pricing</p>
-        <h2 className="mt-4 text-[2rem] md:text-[2.5rem]">Sessions and packages</h2>
+        <h2 className="mt-4 text-[3rem] md:text-[4.5rem]">Sessions and packages</h2>
       </div>
-      <div className="md:col-span-7 md:col-start-6">
+      <div className="md:col-span-6 md:col-start-7 md:pt-10">
         {pricing.showPrices ? (
           <>
-            <dl className="m-0 border-t border-rule" data-testid="list-pricing">
+            <dl className="m-0 border-t-2 border-plum" data-testid="list-pricing">
               {pricing.rows.map((r) => (
                 <div key={r.id} className="flex items-baseline justify-between gap-6 py-5 border-b border-rule">
                   <dt>
-                    <span className="block">{r.name}</span>
-                    <span className="block text-stone text-[15px]">{r.detail}</span>
+                    <span className="block font-semibold">{r.name}</span>
+                    <span className="block muted text-[15px]">{r.detail}</span>
                   </dt>
-                  <dd className="m-0 font-serif text-[1.35rem] tabular-nums">{r.price}</dd>
+                  <dd className="m-0 font-display text-[2rem] text-magenta tabular-nums">{r.price}</dd>
                 </div>
               ))}
             </dl>

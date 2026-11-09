@@ -31,10 +31,15 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 ## Approved website direction
 
 - The owner's main design requirement: "Please don't make it look like AI."
-- Quiet, warm, spacious, editorial boutique-studio presentation. No gradients, shadows, decorative icon sets, rounded feature cards, stock images, AI images, or dark-mode toggle.
-- Use exactly the brief's paper, sand, ink, stone, protea, and sage palette. Fraunces headings at 400/500; Inter body/UI at 400/500. Fonts must be self-hosted with `@fontsource`, not fetched from Google.
+- Design v3 (orchid + charcoal, from her old proteafitness.com homepage): girly but strong, athlete energy. Loud color, heavy type, real gym imagery. Loud is fine; generic is not. Full rules are in the Design section of `docs/site-brief.md`.
+- Palette, and no other colors: `--orchid` #E37CD2, `--plum` #5F3857, `--plum-ink` #3A1F36, `--char` #1C1A1F, `--white` #FFFFFF, `--blush` #FBF4FA, `--magenta` #9C2A8C, `--mist` #B9A9B6. No beige/paper tones and no hot pink.
+- Readability rules (non-negotiable): text on orchid is `--plum-ink` or `--char`, never white. White text only on `--char` or `--plum`. Orchid text only on `--char` or `--plum`. On light backgrounds, colored text uses `--magenta`. Use the `.s-orchid`, `.s-char`, `.s-plum`, `.s-blush` section classes.
+- Type: Anton for display (line-height 0.95, sentence case; uppercase only for short labels), Inter 400/500/600/700 for body and UI at 17 to 18px, labels in Inter 600 12 to 13px uppercase with 0.14em tracking. Never body copy in Anton. No Fraunces or Barlow Condensed. Fonts are self-hosted with `@fontsource`, not fetched from Google.
+- Signature element: the `pattern-hero` dumbbell photo as a plum/orchid CSS duotone (`PatternBand.tsx`). Until Emily supplies it, solid orchid with the caption. Never stock, AI or drawn dumbbells.
+- Still banned: gradients, gradient text, glows, blurred blobs, glassmorphism, blurred drop shadows, emoji, decorative icon sets, three-card feature grids, rounded shadow cards, default shadcn styling, stock or AI photos, illustrations, star widgets, "Trusted by" strips, counters, chatbots, popups, dark-mode toggle, hype copy.
+- AI-generated textures from `scripts/` (see `scripts/README.md`) are for review only. They never go into a photo slot or onto the site without the user's explicit OK.
 - Use verified legacy copy from `proteafitness.com` Home, About, `/whatido`, and `/happyclients` as the source; preserve testimonials verbatim except obvious typos, with first name and last initial only.
-- Emily will supply real photographs. Until then show labeled sand-colored photo slots, not licensed photos from the former site.
+- Emily will supply real photographs. Until then show labeled placeholder slots (`--plum` on orchid/charcoal, `--orchid` on blush), not licensed photos from the former site. The logo goes in `src/assets/logo/`.
 - Pricing stays hidden with `showPrices: false`. Future price rows use `TBD` until explicitly confirmed.
 - Do not invent the story behind the new name. Leave `TODO(Emily): why "Soma Nova"` for her.
 - The Express API stays unchanged. Do not add backend features.
