@@ -1,6 +1,6 @@
 # Soma Nova
 
-Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
+Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and NASM Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
 
 ## Scope and launch hold
 
@@ -18,6 +18,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 - Public phone: (408) 705-7176, call or text.
 - Email: somanovafitness@gmail.com (changed 2026-11-09 from proteafitness.morganhill@gmail.com).
 - Instagram: @protea_fitness (it will be renamed later).
+- Reviews: Google https://www.google.com/search?q=Protea+Fitness+Morgan+Hill&kgmid=/g/11l33cmlr0 and Yelp https://www.yelp.com/biz/protea-fitness-morgan-hill-2 (both still named Protea Fitness). Linked in the footer, Kind Words and JSON-LD sameAs.
 - Pricing isn't final. Don't publish any prices until the user confirms them.
 - Never make medical claims or promise health outcomes.
 - The site's display name is "Soma Nova". Use "formerly Protea Fitness" in the footer at launch.
@@ -93,4 +94,4 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 
 ## Service changes
 
-- As of 2026-11-09 Emily no longer offers nutrition coaching. Her credentials are NASM Certified Personal Trainer and Certified Wellness Coach (certifying body for the wellness coach credential unknown, so don't name one). Don't mention nutrition coaching or the CNC credential anywhere on the site, in page descriptions or in structured data.
+- As of 2026-11-09 Emily no longer offers nutrition coaching. Her credentials are NASM Certified Personal Trainer and NASM Certified Wellness Coach (both issued by NASM, confirmed by the user). Don't mention nutrition coaching or the CNC credential anywhere on the site, in page descriptions or in structured data.
