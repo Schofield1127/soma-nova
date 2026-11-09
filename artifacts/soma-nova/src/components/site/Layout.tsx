@@ -3,6 +3,7 @@ import { Link, useLocation } from 'wouter';
 import { nav, site } from '@/content/site';
 import { Wordmark } from './Wordmark';
 import { DuotoneFilter } from './PatternBand';
+import { Accent } from './Accent';
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -93,7 +94,7 @@ function Footer() {
       <div className="wrap py-16 md:py-24 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
           <Wordmark tone="orchid" testId="link-footer-home" />
-          <p className="mt-6 label">Formerly Protea Fitness</p>
+          <p className="mt-6 label accent-label"><Accent name="kettlebell" className="w-5 h-6" testId="accent-footer" />Formerly Protea Fitness</p>
         </div>
         <div className="md:col-span-4 text-[16px] flex flex-col gap-2.5">
           <p className="muted">{site.city}</p>
