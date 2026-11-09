@@ -26,7 +26,7 @@ export default function Home() {
     <>
       {/* Hero (orchid) */}
       <section className="s-orchid">
-        <PatternBand drift className="h-[clamp(120px,22vh,340px)] md:h-[clamp(200px,34vh,420px)]" testId="pattern-hero" />
+        <PatternBand drift accents className="h-[clamp(120px,22vh,340px)] md:h-[clamp(200px,34vh,420px)]" testId="pattern-hero" />
         <div className="wrap pt-8 md:pt-14 pb-16 md:pb-24">
           <h1
             className="text-plum-ink text-[clamp(4rem,18vw,7.5rem)] lg:text-[clamp(7.5rem,10.5vw,10.5rem)] max-w-[11ch]"
