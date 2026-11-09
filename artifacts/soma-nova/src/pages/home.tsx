@@ -7,6 +7,7 @@ import { QuoteStepper } from '@/components/site/Quotes';
 import { Pricing } from '@/components/site/Pricing';
 import { ClosingBand } from '@/components/site/ClosingBand';
 import { PatternBand } from '@/components/site/PatternBand';
+import { Accent } from '@/components/site/Accent';
 import { useSeo } from '@/components/site/useSeo';
 
 const steps = [
@@ -64,7 +65,7 @@ export default function Home() {
       {/* Training (blush) */}
       <section className="s-blush py-20 md:py-28" aria-labelledby="training-h">
         <div className="wrap">
-          <p className="label">Training</p>
+          <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />Training</p>
           <h2 id="training-h" className="mt-4 text-[3.4rem] md:text-[5.5rem]">Focused on you.</h2>
           <Reveal>
             <ol className="m-0 p-0 list-none mt-10 md:mt-14 border-t-2 border-plum">
@@ -110,12 +111,15 @@ export default function Home() {
       {/* How it works (charcoal) */}
       <section className="s-char py-20 md:py-32" aria-labelledby="how-h">
         <div className="wrap">
-          <p className="label">How it works</p>
+          <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />How it works</p>
           <h2 id="how-h" className="mt-4 text-white text-[3.4rem] md:text-[5.5rem] max-w-[14ch]">Three steps, no pressure.</h2>
           <ol className="m-0 p-0 list-none mt-12 md:mt-16 grid md:grid-cols-3 gap-12 md:gap-10">
             {steps.map((s) => (
               <li key={s.n} data-testid={`step-${s.n}`}>
-                <span className="block font-display text-orchid text-[6rem] md:text-[8rem] leading-[0.85]" aria-hidden="true">{s.n}</span>
+                <div className="flex items-end gap-3">
+                  <span className="block font-display text-orchid text-[6rem] md:text-[8rem] leading-[0.85]" aria-hidden="true">{s.n}</span>
+                  <Accent name="kettlebell" className="w-8 h-9 md:w-10 md:h-11 mb-1" testId={`accent-step-${s.n}`} />
+                </div>
                 <h3 className="mt-4 text-white text-[1.9rem] md:text-[2.1rem]">{s.title}</h3>
                 <p className="mt-3 muted text-[16px] md:text-[17px]">{s.text}</p>
               </li>
@@ -128,7 +132,7 @@ export default function Home() {
       <section className="s-orchid py-20 md:py-28" aria-labelledby="kind-h">
         <div className="wrap grid md:grid-cols-12 gap-8 md:gap-10">
           <div className="md:col-span-3">
-            <p className="label" id="kind-h">Kind words</p>
+            <p className="label accent-label" id="kind-h"><Accent name="dumbbell" className="w-8 h-4" />Kind words</p>
             <Link href="/kind-words" className="tlink inline-block mt-5 text-[15px]" data-testid="link-all-kind-words">Read them all</Link>
           </div>
           <div className="md:col-span-8 md:col-start-5">

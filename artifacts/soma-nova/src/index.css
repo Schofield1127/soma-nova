@@ -207,6 +207,10 @@
 }
 .pattern-band .photo-caption { color: var(--plum-ink); }
 
+/* Gym-weight accents (Accent.tsx). Painted in the section's accent color through a mask. */
+.accent-mark { display: inline-block; flex: none; background-color: var(--accent); vertical-align: middle; }
+.accent-label { display: inline-flex; align-items: center; gap: 0.6em; }
+
 /* Hamburger: two bold lines. */
 .menu-lines { display: inline-flex; flex-direction: column; gap: 7px; width: 34px; }
 .menu-lines span { display: block; height: 4px; background: currentColor; transition: transform 160ms ease; }

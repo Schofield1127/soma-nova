@@ -1,12 +1,13 @@
 import { pricing } from '@/content/pricing';
 import { ConsultButton } from './Actions';
+import { Accent } from './Accent';
 
 // Styled for the blush section. Prices stay hidden while pricing.showPrices is false.
 export function Pricing() {
   return (
     <div className="grid md:grid-cols-12 gap-8 md:gap-12">
       <div className="md:col-span-5">
-        <p className="label">Pricing</p>
+        <p className="label accent-label"><Accent name="plate" className="w-5 h-5" />Pricing</p>
         <h2 className="mt-4 text-[3rem] md:text-[4.5rem]">Sessions and packages</h2>
       </div>
       <div className="md:col-span-6 md:col-start-7 md:pt-10">
