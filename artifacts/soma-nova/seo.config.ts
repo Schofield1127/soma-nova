@@ -12,7 +12,7 @@ export const SITE_URL = 'https://somanovafitness.com';
 export const INDEXABLE = false;
 
 /** Public routes that belong in sitemap.xml. Keep in sync with App.tsx. */
-export const SITEMAP_ROUTES = ['/', '/training', '/about', '/kind-words', '/contact'];
+export const SITEMAP_ROUTES = ['/', '/training', '/about', '/kind-words', '/contact', '/privacy'];
 
 /** Social share image (1200x630) and its alt text. Lives in public/. */
 export const OG_IMAGE = '/og-image.png';

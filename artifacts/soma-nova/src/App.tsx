@@ -7,6 +7,7 @@ import Training from '@/pages/training';
 import About from '@/pages/about';
 import KindWords from '@/pages/kind-words';
 import Contact from '@/pages/contact';
+import Privacy from '@/pages/privacy';
 import NotFound from '@/pages/not-found';
 
 function Router() {
@@ -19,6 +20,7 @@ function Router() {
           <Route path="/about" component={About} />
           <Route path="/kind-words" component={KindWords} />
           <Route path="/contact" component={Contact} />
+          <Route path="/privacy" component={Privacy} />
           {/* Old proteafitness.com paths, in case a redirect keeps the path. */}
           <Route path="/whatido"><Redirect to="/training" replace /></Route>
           <Route path="/happyclients"><Redirect to="/kind-words" replace /></Route>

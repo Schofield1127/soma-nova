@@ -120,6 +120,7 @@ function Footer() {
           <a href={site.tel} className="tlink self-start" data-testid="link-footer-phone">{site.phoneDisplay}</a>
           <a href={site.mailto} className="tlink self-start break-all" data-testid="link-footer-email">{site.email}</a>
           <a href={site.instagramUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-instagram">Instagram {site.instagramHandle}</a>
+          <Link href="/privacy" className="tlink self-start mt-3 text-[14px]" data-testid="link-footer-privacy">Privacy policy</Link>
         </div>
         <nav aria-label="Footer" className="md:col-span-3 flex flex-col gap-2.5">
           {nav.map((n) => (
