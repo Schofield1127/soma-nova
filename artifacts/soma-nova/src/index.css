@@ -1,85 +1,221 @@
 @import 'tailwindcss';
 
+/*
+  Soma Nova palette (v3, orchid + charcoal). See docs/site-brief.md for the rules.
+  Readability rules:
+  - Text on orchid is --plum-ink or --char, never white.
+  - White text only on --char or --plum.
+  - Orchid text only on --char or --plum.
+  - On light backgrounds, colored text uses --magenta.
+*/
 :root {
-  --paper: #F6F1EA;
-  --sand: #E9DFD3;
-  --ink: #2B2622;
-  --stone: #645A52;
-  --protea: #A4545A;
-  --sage: #8A9A86;
-  --rule: rgb(43 38 34 / 0.12);
-  --serif: 'Fraunces', Georgia, serif;
+  --orchid: #E37CD2;
+  --plum: #5F3857;
+  --plum-ink: #3A1F36;
+  --char: #1C1A1F;
+  --white: #FFFFFF;
+  --blush: #FBF4FA;
+  --magenta: #9C2A8C;
+  --mist: #B9A9B6;
+
+  --display: 'Anton', 'Arial Narrow', Impact, sans-serif;
   --sans: 'Inter', system-ui, sans-serif;
-  --gutter: clamp(1.25rem, 5vw, 4rem);
+  --gutter: clamp(1rem, 5vw, 4rem);
+
+  /* Section context. Each .s-* class below resets these. Default is blush. */
+  --fg: var(--char);
+  --fg-muted: #4E414B;
+  --accent: var(--magenta);
+  --rule-c: rgb(95 56 87 / 0.35);
+  --label-c: var(--magenta);
+  --btn-bg: var(--char);
+  --btn-fg: var(--white);
+  --slot-bg: var(--orchid);
+  --slot-fg: var(--plum-ink);
+  --link-deco: var(--magenta);
+  --link-hover: var(--magenta);
 }
 
 @theme inline {
-  --color-paper: var(--paper);
-  --color-sand: var(--sand);
-  --color-ink: var(--ink);
-  --color-stone: var(--stone);
-  --color-protea: var(--protea);
-  --color-sage: var(--sage);
-  --color-rule: var(--rule);
-  --font-serif: var(--serif);
+  --color-orchid: var(--orchid);
+  --color-plum: var(--plum);
+  --color-plum-ink: var(--plum-ink);
+  --color-char: var(--char);
+  --color-blush: var(--blush);
+  --color-magenta: var(--magenta);
+  --color-mist: var(--mist);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-rule: var(--rule-c);
+  --font-display: var(--display);
   --font-sans: var(--sans);
+}
+
+/* Section themes */
+.s-orchid {
+  background: var(--orchid);
+  --fg: var(--plum-ink);
+  --fg-muted: var(--plum-ink);
+  --accent: var(--char);
+  --rule-c: rgb(58 31 54 / 0.4);
+  --label-c: var(--plum-ink);
+  --btn-bg: var(--char);
+  --btn-fg: var(--white);
+  --slot-bg: var(--plum);
+  --slot-fg: var(--white);
+  --link-deco: var(--char);
+  --link-hover: var(--char);
+  color: var(--fg);
+}
+.s-char {
+  background: var(--char);
+  --fg: var(--white);
+  --fg-muted: var(--mist);
+  --accent: var(--orchid);
+  --rule-c: rgb(255 255 255 / 0.18);
+  --label-c: var(--mist);
+  --btn-bg: var(--orchid);
+  --btn-fg: var(--char);
+  --slot-bg: var(--plum);
+  --slot-fg: var(--white);
+  --link-deco: var(--orchid);
+  --link-hover: var(--orchid);
+  color: var(--fg);
+}
+.s-plum {
+  background: var(--plum);
+  --fg: var(--white);
+  --fg-muted: var(--white);
+  --accent: var(--orchid);
+  --rule-c: rgb(255 255 255 / 0.25);
+  --label-c: var(--white);
+  --btn-bg: var(--orchid);
+  --btn-fg: var(--char);
+  --slot-bg: var(--char);
+  --slot-fg: var(--white);
+  --link-deco: var(--orchid);
+  --link-hover: var(--orchid);
+  color: var(--fg);
+}
+.s-blush {
+  background: var(--blush);
+  --fg: var(--char);
+  --fg-muted: #4E414B;
+  --accent: var(--magenta);
+  --rule-c: rgb(95 56 87 / 0.35);
+  --label-c: var(--magenta);
+  --btn-bg: var(--char);
+  --btn-fg: var(--white);
+  --slot-bg: var(--orchid);
+  --slot-fg: var(--plum-ink);
+  --link-deco: var(--magenta);
+  --link-hover: var(--magenta);
+  color: var(--fg);
 }
 
 @layer base {
   html { -webkit-text-size-adjust: 100%; scroll-padding-top: 6rem; }
   body {
     margin: 0;
-    background: var(--paper);
-    color: var(--ink);
+    background: var(--char);
+    color: var(--fg);
     font-family: var(--sans);
     font-size: 17px;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
   }
   @media (min-width: 768px) { body { font-size: 18px; } }
-  h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.015em; line-height: 1.12; margin: 0; }
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 0.005em;
+    margin: 0;
+  }
   p { margin: 0; }
-  ::selection { background: var(--sand); color: var(--ink); }
-  :focus-visible { outline: 2px solid var(--protea); outline-offset: 3px; }
+  ::selection { background: var(--char); color: var(--orchid); }
+  :focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
 }
 
-.wrap { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: var(--gutter); }
-.measure { max-width: 65ch; }
-.label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); }
+.wrap { width: 100%; max-width: 78rem; margin-inline: auto; padding-inline: var(--gutter); }
+.measure { max-width: 62ch; }
+.muted { color: var(--fg-muted); }
+.accent { color: var(--accent); }
+.label {
+  font-family: var(--sans); font-weight: 600; font-size: 12px; line-height: 1.3;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--label-c);
+}
+@media (min-width: 768px) { .label { font-size: 13px; } }
 .prose-soft p + p { margin-top: 1.1em; }
 
+/* Buttons: hard corners, heavy uppercase. Hover flips the colors. */
 .btn {
-  display: inline-flex; align-items: center; justify-content: center;
-  background: var(--protea); color: var(--paper);
-  font: 500 16px/1.2 var(--sans);
-  padding: 0.95rem 1.4rem; border-radius: 2px; text-decoration: none;
-  transition: background-color 160ms ease;
-  min-height: 48px;
+  display: inline-flex; align-items: center; justify-content: center; text-align: center;
+  background: var(--btn-bg); color: var(--btn-fg);
+  border: 2px solid var(--btn-bg);
+  font: 700 15px/1.2 var(--sans); letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 1rem 1.6rem; border-radius: 0; text-decoration: none;
+  min-height: 52px;
+  transition: background-color 140ms ease, color 140ms ease;
 }
-.btn:hover { text-decoration: underline; text-underline-offset: 0.2em; }
-.btn:focus-visible { outline-color: var(--ink); }
-.on-ink .btn:focus-visible { outline-color: var(--paper); }
+.btn:hover { background: var(--btn-fg); color: var(--btn-bg); }
+.btn-sm { padding: 0.7rem 1.1rem; min-height: 0; font-size: 13px; }
 
 .tlink {
-  color: var(--ink); text-decoration: underline; text-decoration-thickness: 1px;
-  text-underline-offset: 0.3em; text-decoration-color: var(--protea);
-  transition: text-decoration-color 160ms ease, color 160ms ease;
-  background: none; border: 0; padding: 0; font: inherit; cursor: pointer;
+  color: var(--fg); font-weight: 600;
+  text-decoration: underline; text-decoration-thickness: 2px;
+  text-underline-offset: 0.28em; text-decoration-color: var(--link-deco);
+  transition: color 140ms ease;
+  background: none; border: 0; padding: 0; font-family: inherit; font-size: inherit; cursor: pointer;
 }
-.tlink:hover { color: var(--protea); }
-.bg-sand .tlink:hover { color: var(--ink); }
-.on-paper .tlink-accent, .tlink-accent { color: var(--protea); }
-.on-ink .tlink { color: var(--paper); text-decoration-color: var(--paper); }
-.on-ink .tlink:hover { color: var(--sand); }
+.tlink:hover { color: var(--link-hover); }
+/* On orchid the hover color equals char; underline thickens instead. */
+.s-orchid .tlink:hover { text-decoration-thickness: 4px; }
 
-.reveal { opacity: 0; transition: opacity 280ms ease-out; }
-.reveal.is-in { opacity: 1; }
+/* Scroll reveal: short fade and slide-up. */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 260ms ease-out, transform 260ms ease-out; }
+.reveal.is-in { opacity: 1; transform: none; }
+
+/* Photo placeholders and photos */
+.photo-slot { position: relative; background: var(--slot-bg); overflow: hidden; max-height: 55vh; }
+@media (min-width: 768px) { .photo-slot { max-height: none; } }
+.photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.photo-caption {
+  position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem;
+  font: 600 12px/1.45 var(--sans); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--slot-fg);
+}
+
+/* Hard offset block behind a photo (not a blurred shadow). */
+.offset-block { position: relative; isolation: isolate; }
+.offset-block::before {
+  content: ''; position: absolute; inset: 0; transform: translate(6px, 6px);
+  background: var(--char); z-index: -1;
+}
+
+/* Dumbbell pattern band. Duotone happens in the SVG filter in PatternBand.tsx. */
+.pattern-band { position: relative; overflow: hidden; background: var(--orchid); }
+.pattern-band .pattern-img {
+  position: absolute; inset: -12%; background-size: cover; background-position: center;
+  filter: url(#sn-duotone);
+}
+.pattern-band.drift .pattern-img { animation: sn-drift 40s linear infinite alternate; }
+@keyframes sn-drift {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-8%, -8%, 0); }
+}
+.pattern-band .photo-caption { color: var(--plum-ink); }
+
+/* Hamburger: two bold lines. */
+.menu-lines { display: inline-flex; flex-direction: column; gap: 7px; width: 34px; }
+.menu-lines span { display: block; height: 4px; background: currentColor; transition: transform 160ms ease; }
+.menu-lines.is-open span:first-child { transform: translateY(5.5px) rotate(45deg); }
+.menu-lines.is-open span:last-child { transform: translateY(-5.5px) rotate(-45deg); }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transition: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .pattern-band.drift .pattern-img { animation: none; }
+  .menu-lines span, .btn, .tlink { transition: none; }
   * { scroll-behavior: auto !important; }
 }
-
-.photo-slot { position: relative; background: var(--sand); overflow: hidden; }
-.bg-sand .photo-slot { outline: 1px solid var(--rule); outline-offset: -1px; }
-.photo-slot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.photo-caption { position: absolute; left: 1rem; right: 1rem; bottom: 0.9rem; font-size: 13px; line-height: 1.45; color: var(--stone); }
