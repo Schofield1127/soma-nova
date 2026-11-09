@@ -25,13 +25,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const API_URL = 'https://api.openai.com/v1/images/generations';
-const MODEL = process.env.OPENAI_IMAGE_MODEL || 'gpt-image-1';
+const MODEL = process.env.OPENAI_IMAGE_MODEL || 'gpt-image-1.5';
 const MAX_IMAGES_PER_RUN = 4;
 
 type Quality = 'low' | 'medium' | 'high';
 type Size = '1024x1024' | '1536x1024' | '1024x1536';
 
-// Rough gpt-image-1 prices in USD per image (check OpenAI's pricing page; they change).
+// Rough gpt-image-1 list prices, used as a ballpark for newer models in USD per image (check OpenAI's pricing page; they change).
 const APPROX_COST: Record<Quality, Record<Size, number>> = {
   low: { '1024x1024': 0.011, '1536x1024': 0.016, '1024x1536': 0.016 },
   medium: { '1024x1024': 0.042, '1536x1024': 0.063, '1024x1536': 0.063 },
