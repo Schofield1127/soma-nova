@@ -6,7 +6,7 @@ import { Pricing } from '@/components/site/Pricing';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function Training() {
-  useSeo('Training | Soma Nova, Morgan Hill', 'Corrective, strength, bodyweight and mat work, nutrition coaching, and training for special circumstances. One-on-one in Morgan Hill, CA.');
+  useSeo('Training | Soma Nova, Morgan Hill', 'Corrective, strength, bodyweight and mat work, and training for special circumstances. One-on-one in Morgan Hill, CA.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-16 md:pb-24">
@@ -14,7 +14,7 @@ export default function Training() {
           <div className="md:col-span-7">
             <p className="label">Training</p>
             <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[7.5rem]">Focused on you.</h1>
-            <p className="mt-6 measure font-medium text-[1.12rem]">Every session is one-on-one and built from what your body needs that day. Most people do a mix of the five below.</p>
+            <p className="mt-6 measure font-medium text-[1.12rem]">Every session is one-on-one and built from what your body needs that day. Most people do a mix of the four below.</p>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <div className="offset-block mr-[6px] mb-[6px]">

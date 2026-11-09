@@ -4,8 +4,8 @@ export const site = {
   phoneDisplay: '(408) 705-7176',
   tel: 'tel:+14087057176',
   sms: 'sms:+14087057176',
-  email: 'proteafitness.morganhill@gmail.com',
-  mailto: 'mailto:proteafitness.morganhill@gmail.com',
+  email: 'somanovafitness@gmail.com',
+  mailto: 'mailto:somanovafitness@gmail.com',
   instagramHandle: '@protea_fitness',
   instagramUrl: 'https://www.instagram.com/protea_fitness/',
   city: 'Morgan Hill, CA',
@@ -46,15 +46,6 @@ export const services: Service[] = [
     long: [
       'From mat work and Pilates-based poses to higher intensity cardio, bodyweight training means we can exercise anywhere with what we have.',
       'It is also what you can keep doing at home between sessions, so I make sure you leave knowing the moves well.',
-    ],
-  },
-  {
-    id: 'nutrition',
-    name: 'Nutrition coaching',
-    short: 'Help getting past fad diets and nutrition myths, so you can make informed food choices that support your goals.',
-    long: [
-      'As a certified nutrition coach, I can help you navigate past fad diets and nutrition myths.',
-      'The point is for you to make educated choices that support your own goals. No shame, and no one-size-fits-all meal plan.',
     ],
   },
   {

@@ -1,6 +1,6 @@
 # Soma Nova
 
-Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM CPT and CNC). It is the new name for Protea Fitness (proteafitness.com).
+Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
 
 ## Scope and launch hold
 
@@ -14,9 +14,9 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 
 - Training happens one-on-one in a private home studio in Morgan Hill, with in-home sessions available on request.
 - Never publish the studio's street address, a map pin, or coordinates, including in structured data. Share the address only after someone books.
-- Specialties: corrective, bodyweight, strength, nutrition coaching, and special circumstances (chronic illness, pre/postnatal, seniors, youth, post-physical therapy).
+- Specialties: corrective, bodyweight, strength, and special circumstances (chronic illness, pre/postnatal, seniors, youth, post-physical therapy).
 - Public phone: (408) 705-7176, call or text.
-- Email: proteafitness.morganhill@gmail.com, until a new address is chosen.
+- Email: somanovafitness@gmail.com (changed 2026-11-09 from proteafitness.morganhill@gmail.com).
 - Instagram: @protea_fitness (it will be renamed later).
 - Pricing isn't final. Don't publish any prices until the user confirms them.
 - Never make medical claims or promise health outcomes.
@@ -90,3 +90,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 ## Pointers
 
 - See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+
+## Service changes
+
+- As of 2026-11-09 Emily no longer offers nutrition coaching. Her credentials are NASM Certified Personal Trainer and Certified Wellness Coach (certifying body for the wellness coach credential unknown, so don't name one). Don't mention nutrition coaching or the CNC credential anywhere on the site, in page descriptions or in structured data.

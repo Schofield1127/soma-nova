@@ -8,7 +8,7 @@ Build the real website for **Soma Nova** in the existing `artifacts/soma-nova` R
 
 ## What this is
 
-Soma Nova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and Certified Nutrition Coach. She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
+Soma Nova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and a Certified Wellness Coach. (She no longer offers nutrition coaching as of 2026-11-09.) She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
 
 Open proteafitness.com (Home, About, Services at /whatido, Happy Clients at /happyclients) and use it as the content template. Keep its structure, its warmth and its plain, personal voice. Modernize it and make it feel like a small boutique studio, not a gym chain or a tech startup.
 
@@ -90,21 +90,21 @@ One long home page plus a few short pages. Navigation: **Training, About, Kind W
 **Home**
 1. Hero (orchid): the dumbbell pattern band, then the headline in `--plum-ink` Anton. Photo slot 1 now sits in the charcoal intro. Headline carried over from the old site: "Personal training for the 21st-century human." Subline: "One-on-one training in a private studio in Morgan Hill, built around your body, your goals and your life." Button: "Book a free 30-minute consult". Secondary text link: "Call or text (408) 705-7176".
 2. Short intro (two or three sentences, Emily's voice): adapt "Invest in yourself" from the old home page.
-3. Training: the five services from /whatido as a simple list with thin dividers, each with a one or two sentence description adapted from the old copy: Corrective training, Strength training, Bodyweight and mat work, Nutrition coaching, Special circumstances (chronic illness, pre and postnatal, seniors, youth, after physical therapy). No icons, no cards, no grid of boxes.
-4. About Emily teaser: portrait slot, two or three sentences from the old About page (NASM CPT and CNC, busy mom with a chronic illness, no shame and no pushing to injury), text link "More about Emily".
+3. Training: the four services from /whatido (nutrition coaching dropped 2026-11-09) as a simple list with thin dividers, each with a one or two sentence description adapted from the old copy: Corrective training, Strength training, Bodyweight and mat work, Special circumstances (chronic illness, pre and postnatal, seniors, youth, after physical therapy). No icons, no cards, no grid of boxes.
+4. About Emily teaser: portrait slot, two or three sentences from the old About page (NASM CPT and Certified Wellness Coach, busy mom with a chronic illness, no shame and no pushing to injury), text link "More about Emily".
 5. How it works: three short numbered steps as plain text in a row (not cards): free 30-minute consult, a plan built around you, training one-on-one in the private studio. Mention that the studio address is shared once you book.
 6. Kind words: one large pull quote at a time (Keith L., Noah F., Amber S., Lauren O., Erin V., Zade T.). Copy them exactly from the old Home, About and Happy Clients pages, with only obvious typos fixed. Show first name and last initial only. Simple previous/next text links, no auto-rotating carousel, no star ratings, no avatars.
 7. Pricing: see the pricing rule below.
 8. Closing band in orchid with the 160px dumbbell band on top: "No commitment. No pressure. No obligation." in Anton, plus the charcoal consult button and phone.
 9. Footer: wordmark, "Morgan Hill, CA", phone, email, Instagram text link, "Formerly Protea Fitness", copyright with the current year. No street address.
 
-**Training** page: the five services in more depth, using all of the old /whatido copy, plus a note that in-home sessions are available on request.
+**Training** page: the four services in more depth, using all of the old /whatido copy, plus a note that in-home sessions are available on request.
 
 **About** page: the full old About copy, rewritten lightly for Soma Nova. Remove the line that explains the protea flower. Leave a clearly marked placeholder (`TODO(Emily): why "Soma Nova"`) where she can add one or two sentences on the new name. Do not invent the story.
 
 **Kind Words** page: all testimonials, same rules as above.
 
-**Contact** page: free consult explanation, big tappable links for call (`tel:+14087057176`), text (`sms:+14087057176`) and email (`mailto:proteafitness.morganhill@gmail.com`), and Instagram. "Private studio in Morgan Hill. Address shared after booking." No map, no embedded form for now (a form needs an email-sending service, which needs my approval).
+**Contact** page: free consult explanation, big tappable links for call (`tel:+14087057176`), text (`sms:+14087057176`) and email (`mailto:somanovafitness@gmail.com`), and Instagram. "Private studio in Morgan Hill. Address shared after booking." No map, no embedded form for now (a form needs an email-sending service, which needs my approval).
 
 Drop the old Blog and the Roy T. Bennett and Misty Copeland quote blocks.
 
