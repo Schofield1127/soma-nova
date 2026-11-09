@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useLocation } from 'wouter';
 import { nav, site } from '@/content/site';
 import { Wordmark } from './Wordmark';
+import { DuotoneFilter } from './PatternBand';
 
 function Header() {
   const [open, setOpen] = useState(false);
@@ -26,44 +27,48 @@ function Header() {
   }, [open]);
 
   return (
-    <header ref={header} className="sticky top-0 z-40 bg-paper border-b border-rule">
-      <div className="wrap flex items-center justify-between h-[4.5rem] lg:h-20">
-        <Wordmark />
+    <header ref={header} className={`sticky top-0 z-40 ${open ? 's-char' : 's-orchid'}`}>
+      <div className="wrap flex items-center justify-between h-[4.75rem] lg:h-24">
+        <Wordmark tone={open ? 'white' : 'char'} />
         <nav aria-label="Main" className="hidden lg:flex items-center gap-8">
           {nav.map((n) => (
             <Link
               key={n.href}
               href={n.href}
-              className={`text-[15px] no-underline transition-colors hover:text-protea ${location === n.href ? 'text-protea' : 'text-ink'}`}
+              className={`font-sans font-semibold uppercase text-[14px] tracking-[0.1em] no-underline text-char decoration-[3px] underline-offset-[0.4em] hover:underline ${location === n.href ? 'underline' : ''}`}
               aria-current={location === n.href ? 'page' : undefined}
               data-testid={`link-nav-${n.href.slice(1)}`}
             >
               {n.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn !py-3 !min-h-0 !text-[15px]" data-testid="button-nav-consult">Book a free consult</Link>
+          <Link href="/contact" className="btn btn-sm" data-testid="button-nav-consult">Book a consult</Link>
         </nav>
         <button
           type="button"
-          className="lg:hidden -mr-2 p-2 min-h-12 text-[15px] font-medium text-ink"
+          className="lg:hidden -mr-1 p-2 min-h-12 min-w-12 inline-flex items-center justify-center"
           aria-expanded={open}
           aria-controls="mobile-menu"
+          aria-label={open ? 'Close menu' : 'Open menu'}
           onClick={() => setOpen((o) => !o)}
           data-testid="button-menu"
         >
-          {open ? 'Close' : 'Menu'}
+          <span className={`menu-lines ${open ? 'is-open text-white' : 'text-char'}`} aria-hidden="true">
+            <span />
+            <span />
+          </span>
         </button>
       </div>
 
       {open && (
-        <div id="mobile-menu" className="lg:hidden fixed inset-x-0 top-[4.5rem] bottom-0 bg-paper overflow-y-auto" data-testid="menu-mobile">
-          <nav aria-label="Mobile" onClick={() => setOpen(false)} className="wrap pt-8 pb-12 flex flex-col min-h-full">
-            <Link href="/" className="font-serif text-[2rem] py-3 border-b border-rule no-underline text-ink" data-testid="link-mobile-home">Home</Link>
+        <div id="mobile-menu" className="s-char lg:hidden fixed inset-x-0 top-[4.75rem] bottom-0 overflow-y-auto" data-testid="menu-mobile">
+          <nav aria-label="Mobile" onClick={() => setOpen(false)} className="wrap pt-6 pb-12 flex flex-col min-h-full">
+            <Link href="/" className={`font-display uppercase text-[3.4rem] leading-[1.05] py-1 no-underline ${location === '/' ? 'text-orchid' : 'text-white'}`} data-testid="link-mobile-home">Home</Link>
             {nav.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
-                className={`font-serif text-[2rem] py-3 border-b border-rule no-underline ${location === n.href ? 'text-protea' : 'text-ink'}`}
+                className={`font-display uppercase text-[3.4rem] leading-[1.05] py-1 no-underline ${location === n.href ? 'text-orchid' : 'text-white'}`}
                 data-testid={`link-mobile-${n.href.slice(1)}`}
               >
                 {n.label}
@@ -73,7 +78,7 @@ function Header() {
               <Link href="/contact" className="btn" data-testid="button-mobile-consult">Book a free consult</Link>
               <a href={site.tel} className="tlink" data-testid="link-mobile-phone">Call or text {site.phoneDisplay}</a>
             </div>
-            <p className="mt-auto pt-12 text-stone text-[15px]">Private studio in Morgan Hill, CA</p>
+            <p className="mt-auto pt-12 muted text-[15px]">Private studio in Morgan Hill, CA</p>
           </nav>
         </div>
       )}
@@ -84,24 +89,31 @@ function Header() {
 function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-rule">
-      <div className="wrap py-14 md:py-20 grid gap-10 md:grid-cols-12">
+    <footer className="s-char">
+      <div className="wrap py-16 md:py-24 grid gap-10 md:grid-cols-12">
         <div className="md:col-span-5">
-          <Wordmark testId="link-footer-home" />
-          <p className="mt-6 text-stone text-[15px]">Formerly Protea Fitness</p>
+          <Wordmark tone="orchid" testId="link-footer-home" />
+          <p className="mt-6 label">Formerly Protea Fitness</p>
         </div>
-        <div className="md:col-span-4 text-[15px] flex flex-col gap-2">
-          <p className="text-stone">{site.city}</p>
+        <div className="md:col-span-4 text-[16px] flex flex-col gap-2.5">
+          <p className="muted">{site.city}</p>
           <a href={site.tel} className="tlink self-start" data-testid="link-footer-phone">{site.phoneDisplay}</a>
           <a href={site.mailto} className="tlink self-start break-all" data-testid="link-footer-email">{site.email}</a>
           <a href={site.instagramUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-instagram">Instagram {site.instagramHandle}</a>
         </div>
-        <nav aria-label="Footer" className="md:col-span-3 text-[15px] flex flex-col gap-2">
+        <nav aria-label="Footer" className="md:col-span-3 flex flex-col gap-2.5">
           {nav.map((n) => (
-            <Link key={n.href} href={n.href} className="no-underline text-ink hover:text-protea self-start" data-testid={`link-footer-${n.href.slice(1)}`}>{n.label}</Link>
+            <Link
+              key={n.href}
+              href={n.href}
+              className="font-sans font-semibold uppercase text-[14px] tracking-[0.1em] no-underline text-white hover:text-orchid self-start"
+              data-testid={`link-footer-${n.href.slice(1)}`}
+            >
+              {n.label}
+            </Link>
           ))}
         </nav>
-        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] text-stone">&copy; {year} Soma Nova. Emily Schofield, NASM CPT, CNC.</p>
+        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] muted">&copy; {year} Soma Nova. Emily Schofield, NASM CPT, CNC.</p>
       </div>
     </footer>
   );
@@ -112,7 +124,8 @@ export function Layout({ children }: { children: ReactNode }) {
   useEffect(() => { window.scrollTo(0, 0); }, [location]);
   return (
     <div className="min-h-[100dvh] flex flex-col">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:bg-paper focus:p-3">Skip to content</a>
+      <DuotoneFilter />
+      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:top-2 focus:left-2 focus:bg-char focus:text-white focus:p-3">Skip to content</a>
       <Header />
       <main id="main" className="flex-1">{children}</main>
       <Footer />
