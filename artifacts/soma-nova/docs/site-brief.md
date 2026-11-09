@@ -14,52 +14,66 @@ Open proteafitness.com (Home, About, Services at /whatido, Happy Clients at /hap
 
 The owner's one design request: **"Please don't make it look like AI."** Treat that as the main requirement. The rules in "Do not" below are not optional.
 
-## Feel
+## Design (v3, orchid + charcoal; replaces the earlier paper/sand/protea direction)
 
-Think of a small, well-run boutique: a pilates studio, a physical therapy practice with good taste, an independent wellness shop. Quiet, warm, confident, a bit editorial. Lots of space, real photos, few words. It should look like a person with taste made it by hand for one specific trainer in one specific town.
+The look comes from Emily's old homepage: a full-bleed orchid pink background, a diagonal dumbbell pattern duotoned in plum, and huge heavy condensed headlines. The vibe is **girly but strong, athlete energy**: loud color, heavy type, gym equipment. "Don't make it look like AI" still stands. Loud is fine; generic is not. Use two signature colors, heavy type and real gym imagery instead of gradients and decoration.
 
-## Palette (use exactly these, as CSS variables)
+### Palette (the only colors; defined in `src/index.css`)
 
-The protea flower is the thread from the old brand: dusty pink petals, silvery sage leaves.
+- `--orchid` #E37CD2, signature color. Big full-bleed sections, buttons on dark backgrounds, accents
+- `--plum` #5F3857, duotone shadows, secondary dark sections, photo placeholders on orchid/charcoal
+- `--plum-ink` #3A1F36, text on orchid (contrast 5.6:1)
+- `--char` #1C1A1F, charcoal. Main dark sections, nav menu, footer, buttons on orchid
+- `--white` #FFFFFF, text on charcoal and plum
+- `--blush` #FBF4FA, light sections
+- `--magenta` #9C2A8C, colored text and links on light backgrounds (6.2:1)
+- `--mist` #B9A9B6, secondary text on charcoal
 
-- `--paper` #F6F1EA, warm off-white page background (never pure white)
-- `--sand` #E9DFD3, alternate section background
-- `--ink` #2B2622, text and dark sections (warm near-black, never #000)
-- `--stone` #645A52, secondary text
-- `--protea` #A4545A, the single accent: links, primary button, small details
-- `--sage` #8A9A86, sparing secondary accent: thin rules, small labels
-- Borders: `--ink` at about 12% opacity
+No beige or neutral paper tones, no hot pink, no other colors.
 
-No other colors. No gradients anywhere. If Emily's existing logo uses clearly different colors, stop and show me before changing the palette.
+### Readability rules (non-negotiable)
 
-## Type
+- Text on orchid is `--plum-ink` or `--char`, never white. (The old site's white-on-orchid was 2.6:1.)
+- White text only on `--char` or `--plum`.
+- Orchid text only on `--char` or `--plum` (6.5:1 there).
+- On light backgrounds, colored text uses `--magenta`.
 
-- Headings: **Fraunces** (Google Fonts), weight 400 or 500, normal or italic, never bold. Large and calm, with slightly tight letter-spacing.
-- Body and UI: **Inter**, 400 and 500, 17 to 18px body, line-height around 1.6, max line length about 65 characters.
-- Small uppercase labels (for example "TRAINING", "ABOUT EMILY") in Inter 500, 12px, letter-spacing 0.12em, color `--stone`. Use them sparingly.
-- Self-host the fonts with `@fontsource` packages so the site makes no third-party requests.
+Sections use the `.s-orchid`, `.s-char`, `.s-plum` and `.s-blush` classes, which set the matching text, label, rule, button and placeholder colors. Use them instead of picking colors by hand.
 
-## Layout and details
+**Home rhythm:** orchid hero, charcoal, blush, orchid, charcoal, orchid, blush pricing, orchid closing band, charcoal footer. Orchid is the color people remember.
 
-- Generous whitespace. Sections separated by space and background change, not by boxes.
-- Asymmetric, editorial layouts: image on one side, text offset on the other; let one photo run full-bleed.
-- Corners: square or 2px radius. No pill buttons, no big rounded cards.
-- Shadows: none.
-- Buttons: one solid style (`--protea` background, `--paper` text) and one text-link style with an underline. Labels in plain words.
-- Thin 1px rules in `--sage` or ink at 12% are fine as dividers.
-- Motion: at most a short fade-in on scroll (under 300ms, respects `prefers-reduced-motion`). No parallax, no animated counters, no marquee.
-- Mobile first. Check every section at 375px wide. Sticky header with a simple text menu; on mobile, a plain full-screen menu.
+### Type
 
-## Logo
+- Display: **Anton** (self-hosted, `@fontsource/anton`). Big and tight, line-height 0.95. Sentence case for headlines; uppercase only for short labels and section titles. Mobile hero headline about 64 to 72px and filling the width; desktop 120px and up.
+- Body and UI: **Inter** 400/500/600/700, 17 to 18px. Never set body copy in Anton.
+- Labels: Inter 600, 12 to 13px, uppercase, letter-spacing 0.14em (`.label`).
+- No Fraunces or Barlow Condensed.
 
-Typographic wordmark for now: "Soma Nova" in Fraunces, regular weight, with "PERSONAL TRAINING · MORGAN HILL" as a small label underneath. No icon, no flower graphic, no generated logo. A real logo can replace it later.
+### Layout and details
+
+- Buttons: square corners, Inter 700 uppercase, letter-spacing 0.06em, generous padding. On orchid and blush: `--char` with white text. On dark: `--orchid` with `--char` text. Hover flips the colors.
+- Thin plum rules between list rows. No boxes or cards.
+- Photo frames on orchid can sit on a hard 6px `--char` offset block (`.offset-block`), never a blurred shadow.
+- Motion: a short fade and slide-up on scroll (under 300ms) and quick hover flips. The hero dumbbell pattern may drift very slowly (40s loop). Everything respects `prefers-reduced-motion`. Nothing else moves.
+- Mobile first; check every section at 375px. Sticky orchid header with a two-bold-line menu toggle that opens a full-screen charcoal menu with big Anton links. On desktop, inline Inter 600 uppercase links plus a charcoal "Book a consult" button.
+
+### Logo
+
+Until the real logo arrives: "SOMA NOVA" in Anton with "PERSONAL TRAINING · MORGAN HILL" in label style underneath (`components/site/Wordmark.tsx`). Drop the real logo into `src/assets/logo/` as `logo.svg|png|webp` (plus optional `logo-light.*` for dark backgrounds) and it replaces the wordmark automatically. No generated logo.
+
+### The dumbbell pattern (signature element)
+
+- Photo slot `pattern-hero`: a top-down photo of real dumbbells laid out in diagonal rows. Emily supplies it.
+- Rendered as a CSS duotone (SVG `feColorMatrix` + `feComponentTransfer` filter in `components/site/PatternBand.tsx`): shadows map to `--plum`, highlights to `--orchid`. No gradient overlays.
+- Used full-bleed at the top of the home hero and as a 160px band above every closing call to action.
+- Until the photo exists, those areas are solid `--orchid` with the slot caption. Never substitute stock, AI, clip-art or drawn dumbbells, and never reuse the old site's licensed stock image.
 
 ## Photography
 
 Real photos only. Emily will supply them, so build proper slots:
 
 - Create `artifacts/soma-nova/src/assets/photos/` and a single config file listing every photo slot with its file name, alt text and what it should show.
-- Until real photos are added, each slot shows a flat `--sand` block with the correct aspect ratio and a small caption in `--stone` describing the shot needed, for example "Photo: Emily coaching a client through a split squat, natural light, 4:5".
+- Until real photos are added, each slot shows a flat block with a label-style caption describing the shot needed: `--plum` on orchid and charcoal sections, `--orchid` on blush. Placeholders are capped at about 55vh on mobile, and an empty box is never the first thing on screen.
 - Do **not** use stock photos, AI-generated images, illustrations or the iStock images from the old site (those licenses belong to the old Squarespace account).
 - Photo slots needed:
   1. Hero: Emily coaching a client in the studio, natural light, wide (3:2 desktop, 4:5 mobile crop).
@@ -74,14 +88,14 @@ Real photos only. Emily will supply them, so build proper slots:
 One long home page plus a few short pages. Navigation: **Training, About, Kind Words, Contact**, and a "Book a free consult" button.
 
 **Home**
-1. Hero: photo slot 1, headline carried over from the old site: "Personal training for the 21st-century human." Subline: "One-on-one training in a private studio in Morgan Hill, built around your body, your goals and your life." Button: "Book a free 30-minute consult". Secondary text link: "Call or text (408) 705-7176".
+1. Hero (orchid): the dumbbell pattern band, then the headline in `--plum-ink` Anton. Photo slot 1 now sits in the charcoal intro. Headline carried over from the old site: "Personal training for the 21st-century human." Subline: "One-on-one training in a private studio in Morgan Hill, built around your body, your goals and your life." Button: "Book a free 30-minute consult". Secondary text link: "Call or text (408) 705-7176".
 2. Short intro (two or three sentences, Emily's voice): adapt "Invest in yourself" from the old home page.
 3. Training: the five services from /whatido as a simple list with thin dividers, each with a one or two sentence description adapted from the old copy: Corrective training, Strength training, Bodyweight and mat work, Nutrition coaching, Special circumstances (chronic illness, pre and postnatal, seniors, youth, after physical therapy). No icons, no cards, no grid of boxes.
 4. About Emily teaser: portrait slot, two or three sentences from the old About page (NASM CPT and CNC, busy mom with a chronic illness, no shame and no pushing to injury), text link "More about Emily".
 5. How it works: three short numbered steps as plain text in a row (not cards): free 30-minute consult, a plan built around you, training one-on-one in the private studio. Mention that the studio address is shared once you book.
 6. Kind words: one large pull quote at a time (Keith L., Noah F., Amber S., Lauren O., Erin V., Zade T.). Copy them exactly from the old Home, About and Happy Clients pages, with only obvious typos fixed. Show first name and last initial only. Simple previous/next text links, no auto-rotating carousel, no star ratings, no avatars.
 7. Pricing: see the pricing rule below.
-8. Closing band in `--ink` with `--paper` text: "There's no commitment, pressure or obligation." plus the consult button and phone.
+8. Closing band in orchid with the 160px dumbbell band on top: "No commitment. No pressure. No obligation." in Anton, plus the charcoal consult button and phone.
 9. Footer: wordmark, "Morgan Hill, CA", phone, email, Instagram text link, "Formerly Protea Fitness", copyright with the current year. No street address.
 
 **Training** page: the five services in more depth, using all of the old /whatido copy, plus a note that in-home sessions are available on request.
@@ -113,7 +127,7 @@ Prices are not decided. Build a pricing section driven by a config file with `sh
 - No three-column "feature card" grid with an icon, a bold title and two lines of text.
 - No big rounded cards with drop shadows; do not use the default shadcn/ui card, badge or button look. Restyle anything you keep.
 - No "Trusted by" logo strips, star-rating widgets, animated number counters, sparkle/check bullets, or "Why choose us" sections.
-- No purple, teal or blue accents, no dark mode toggle, no hero that is just centered headline + subhead + two buttons over a gradient.
+- No teal or blue accents, no colors outside the palette, no dark mode toggle, no hero that is just centered headline + subhead + two buttons over a gradient.
 - No stock or AI images, no illustrations, no abstract 3D shapes.
 - No chatbot widget, popup, cookie banner, newsletter modal or exit-intent anything.
 
@@ -121,7 +135,7 @@ Prices are not decided. Build a pricing section driven by a config file with `sh
 
 - Add page `<title>` and meta descriptions for each page, but keep `noindex, nofollow` sitewide for now.
 - Add LocalBusiness structured data with name, phone, city (Morgan Hill, CA) and area served only. No street address and no coordinates.
-- Lighthouse on mobile: aim for 95+ on performance, accessibility and best practices. Text contrast must pass WCAG AA; use `--protea` for small text only on `--paper` (it is too light on `--sand`), and `--stone` is fine on both.
+- Lighthouse on mobile: aim for 95+ on performance, accessibility and best practices. Text contrast must pass WCAG AA; follow the readability rules in the Design section.
 - No analytics, trackers or third-party embeds.
 - Don't add backend features. The Express API can stay as it is.
 - Commit and push to the GitHub repo when done.
