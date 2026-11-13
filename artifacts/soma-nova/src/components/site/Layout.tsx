@@ -114,6 +114,8 @@ function Footer() {
           <a href={site.tel} className="tlink self-start" data-testid="link-footer-phone">{site.phoneDisplay}</a>
           <a href={site.mailto} className="tlink self-start break-all" data-testid="link-footer-email">{site.email}</a>
           <a href={site.instagramUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-instagram">Instagram {site.instagramHandle}</a>
+          <a href={site.googleUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-google">Reviews on Google</a>
+          <a href={site.yelpUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-yelp">Reviews on Yelp</a>
         </div>
         <nav aria-label="Footer" className="md:col-span-3 flex flex-col gap-2.5">
           {nav.map((n) => (
@@ -127,7 +129,7 @@ function Footer() {
             </Link>
           ))}
         </nav>
-        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] muted">&copy; {year} Soma Nova. Emily Schofield, NASM CPT, Certified Wellness Coach.</p>
+        <p className="md:col-span-12 pt-6 border-t border-rule text-[13px] muted">&copy; {year} Soma Nova. Emily Schofield, NASM Certified Personal Trainer and Certified Wellness Coach.</p>
       </div>
     </footer>
   );

@@ -1,5 +1,5 @@
 import { Link } from 'wouter';
-import { services } from '@/content/site';
+import { services, site } from '@/content/site';
 import { Photo } from '@/components/site/Photo';
 import { Reveal } from '@/components/site/Reveal';
 import { ConsultButton, PhoneLink } from '@/components/site/Actions';
@@ -20,7 +20,7 @@ const steps = [
 export default function Home() {
   useSeo(
     'Soma Nova | Personal training in Morgan Hill, CA',
-    'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer and Certified Wellness Coach, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
+    'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer and NASM Certified Wellness Coach, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
   );
   return (
     <>
@@ -98,9 +98,9 @@ export default function Home() {
           </div>
           <Reveal className="md:col-span-6 md:col-start-7">
             <h2 className="text-plum-ink text-[3.6rem] md:text-[6rem]">Hi, I&rsquo;m Emily.</h2>
-            <p className="mt-5 label">NASM Certified Personal Trainer · Certified Wellness Coach</p>
+            <p className="mt-5 label">NASM Certified Personal Trainer · NASM Certified Wellness Coach</p>
             <div className="mt-6 measure prose-soft font-medium">
-              <p>I&rsquo;m a NASM Certified Personal Trainer and a Certified Wellness Coach. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
+              <p>I&rsquo;m a NASM Certified Personal Trainer and a NASM Certified Wellness Coach. I&rsquo;m also a busy mom with a chronic illness, so I know how hard it can be to take charge of your health.</p>
               <p>I will never shame you or push you to injury. I will always help you find your personal best.</p>
             </div>
             <Link href="/about" className="tlink inline-block mt-7" data-testid="link-more-about">More about Emily</Link>
@@ -134,6 +134,10 @@ export default function Home() {
           <div className="md:col-span-3">
             <p className="label accent-label" id="kind-h"><Accent name="dumbbell" className="w-8 h-4" />Kind words</p>
             <Link href="/kind-words" className="tlink inline-block mt-5 text-[15px]" data-testid="link-all-kind-words">Read them all</Link>
+            <p className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-[15px]">
+              <a href={site.googleUrl} className="tlink" rel="noopener" data-testid="link-home-google">Google reviews</a>
+              <a href={site.yelpUrl} className="tlink" rel="noopener" data-testid="link-home-yelp">Yelp reviews</a>
+            </p>
           </div>
           <div className="md:col-span-8 md:col-start-5">
             <QuoteStepper />
