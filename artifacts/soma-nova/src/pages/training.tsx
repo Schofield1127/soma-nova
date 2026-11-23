@@ -6,7 +6,7 @@ import { Pricing } from '@/components/site/Pricing';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function Training() {
-  useSeo('Training | Soma Nova, Morgan Hill', 'Corrective, strength, bodyweight and mat work, and training for special circumstances. One-on-one in Morgan Hill, CA.');
+  useSeo('Training | SomaNova, Morgan Hill', 'Corrective, strength, bodyweight and mat work, and training for special circumstances. One-on-one in Morgan Hill, CA.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-16 md:pb-24">

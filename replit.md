@@ -1,6 +1,6 @@
-# Soma Nova
+# SomaNova
 
-Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and NASM Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
+SomaNova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and NASM Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
 
 ## Scope and launch hold
 
@@ -21,7 +21,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 - Reviews: Google https://www.google.com/search?q=Protea+Fitness+Morgan+Hill&kgmid=/g/11l33cmlr0 and Yelp https://www.yelp.com/biz/protea-fitness-morgan-hill-2 (both still named Protea Fitness). Linked in the footer, Kind Words and JSON-LD sameAs.
 - Pricing isn't final. Don't publish any prices until the user confirms them.
 - Never make medical claims or promise health outcomes.
-- The site's display name is "Soma Nova". Use "formerly Protea Fitness" in the footer at launch.
+- The site's display name is "SomaNova". Use "formerly Protea Fitness" in the footer at launch.
 
 ## Security and project separation
 
@@ -43,7 +43,7 @@ Soma Nova is a solo personal training business in Morgan Hill, CA, owned by Emil
 - Use verified legacy copy from `proteafitness.com` Home, About, `/whatido`, and `/happyclients` as the source; preserve testimonials verbatim except obvious typos, with first name and last initial only.
 - Emily will supply real photographs. Until then show labeled placeholder slots (`--plum` on orchid/charcoal, `--orchid` on blush), not licensed photos from the former site. The logo goes in `src/assets/logo/`.
 - Pricing stays hidden with `showPrices: false`. Future price rows use `TBD` until explicitly confirmed.
-- Do not invent the story behind the new name. The About page's "Why Soma Nova" section (added at the user's request on 2026-11-09) states only the literal meaning (soma: Greek for body; nova: Latin for new). It is a draft for Emily to check or rewrite in her own words, marked `TODO(Emily)`. Don't add a personal backstory for her.
+- Do not invent the story behind the new name. The About page's "Why SomaNova" section (added at the user's request on 2026-11-09) states only the literal meaning (soma: Greek for body; nova: Latin for new). It is a draft for Emily to check or rewrite in her own words, marked `TODO(Emily)`. Don't add a personal backstory for her.
 - The Express API stays unchanged. Do not add backend features.
 
 ## Run & Operate

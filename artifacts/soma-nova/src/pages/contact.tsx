@@ -8,7 +8,7 @@ const methods = [
 ];
 
 export default function Contact() {
-  useSeo('Contact | Soma Nova, Morgan Hill', 'Book a free 30-minute consult with Emily. Text (408) 705-7176.');
+  useSeo('Contact | SomaNova, Morgan Hill', 'Book a free 30-minute consult with Emily. Text (408) 705-7176.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-16 md:pb-24">

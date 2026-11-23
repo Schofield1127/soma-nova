@@ -1,5 +1,5 @@
 export const site = {
-  name: 'Soma Nova',
+  name: 'SomaNova',
   tagline: 'Personal training · Morgan Hill',
   phoneDisplay: '(408) 705-7176',
   tel: 'tel:+14087057176',

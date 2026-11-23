@@ -4,7 +4,7 @@ import { ClosingBand } from '@/components/site/ClosingBand';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function KindWords() {
-  useSeo('Kind Words | Soma Nova, Morgan Hill', 'What clients say about training one-on-one with Emily Schofield.');
+  useSeo('Kind Words | SomaNova, Morgan Hill', 'What clients say about training one-on-one with Emily Schofield.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-16 md:pb-24">

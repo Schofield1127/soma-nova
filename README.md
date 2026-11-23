@@ -1,6 +1,6 @@
-# Soma Nova
+# SomaNova
 
-Website for Soma Nova, Emily Schofield's one-on-one personal training business in Morgan Hill. Built for preview; not launched.
+Website for SomaNova, Emily Schofield's one-on-one personal training business in Morgan Hill. Built for preview; not launched.
 
 ## Included
 

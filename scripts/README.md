@@ -3,7 +3,7 @@
 ## Texture generator (`src/generate-texture.ts`)
 
 Makes **texture and pattern images only** with the OpenAI Images API: print grain,
-rubber floor, chalk dust, barbell knurling, halftone, canvas weave, in the Soma Nova palette.
+rubber floor, chalk dust, barbell knurling, halftone, canvas weave, in the SomaNova palette.
 
 It never makes people, faces, bodies, or anything that stands in for Emily or a client,
 and no logos or text. Prompts that mention those are refused. Real photos (Emily, clients,
@@ -26,7 +26,7 @@ magick generated-artifacts/accents/dumbbell-*.png -trim +repage -fill '#1C1A1F' 
 
 ### Setup
 
-1. Create a separate OpenAI API key for Soma Nova (not The Wheel Guys' key).
+1. Create a separate OpenAI API key for SomaNova (not The Wheel Guys' key).
 2. In this Replit project, open Secrets and add `OPENAI_API_KEY` with that key.
    Never paste a key into code, chat or a commit.
 3. Optional: `OPENAI_IMAGE_MODEL` (default `gpt-image-1.5`; gpt-image-1 is retired).
