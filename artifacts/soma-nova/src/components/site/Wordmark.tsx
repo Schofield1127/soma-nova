@@ -41,7 +41,7 @@ export function Wordmark({
       onClick={onClick}
       className={`inline-flex items-center gap-2.5 no-underline ${toneClass[tone]}`}
       data-testid={testId}
-      aria-label="Soma Nova, home"
+      aria-label="SomaNova, home"
     >
       {logo ? (
         <img src={logo} alt="" className="h-12 md:h-16 w-auto" />
@@ -50,7 +50,7 @@ export function Wordmark({
           {/* Kettlebell mark before the name (owner request); takes the section's accent color. */}
           <Accent name="kettlebell" className="w-8 h-10 md:w-9 md:h-11" testId={`${testId}-kettlebell`} />
           <span className="inline-flex flex-col">
-            <span className="font-display text-[1.9rem] md:text-[2.1rem] leading-[0.9] tracking-[0.02em] uppercase">Soma Nova</span>
+            <span className="font-display text-[1.9rem] md:text-[2.1rem] leading-[0.9] tracking-[0.02em] uppercase">SomaNova</span>
             <span className="mt-1 font-sans font-semibold uppercase text-[9.5px] md:text-[10.5px] tracking-[0.14em] leading-none">
               Personal training · Morgan Hill
             </span>

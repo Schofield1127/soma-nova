@@ -10,7 +10,7 @@
   Output goes to generated-artifacts/ (git-ignored) for review. Copy an image
   into the site only with the owner's OK (see replit.md).
 
-  Key: OPENAI_API_KEY in Replit Secrets (the Soma Nova key, not The Wheel Guys').
+  Key: OPENAI_API_KEY in Replit Secrets (the SomaNova key, not The Wheel Guys').
 
   Usage:
     pnpm --filter @workspace/scripts run texture -- --list

@@ -16,4 +16,4 @@ export const SITEMAP_ROUTES = ['/', '/training', '/about', '/kind-words', '/cont
 
 /** Social share image (1200x630) and its alt text. Lives in public/. */
 export const OG_IMAGE = '/og-image.png';
-export const OG_IMAGE_ALT = 'Soma Nova, personal training in Morgan Hill, CA. Formerly Protea Fitness.';
+export const OG_IMAGE_ALT = 'SomaNova, personal training in Morgan Hill, CA. Formerly Protea Fitness.';

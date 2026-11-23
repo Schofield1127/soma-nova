@@ -1,14 +1,14 @@
-# Replit prompt: build the Soma Nova website (v1)
+# Replit prompt: build the SomaNova website (v1)
 
 Paste everything below the line into Replit Agent in the existing **soma-nova** project.
 
 ---
 
-Build the real website for **Soma Nova** in the existing `artifacts/soma-nova` React + Vite app. Read `replit.md` first and follow every rule in it. This replaces the coming-soon placeholder. Keep the launch hold: the `noindex, nofollow` tag and the disallow-all `robots.txt` stay in place, and do not publish, deploy or connect a domain.
+Build the real website for **SomaNova** in the existing `artifacts/soma-nova` React + Vite app. Read `replit.md` first and follow every rule in it. This replaces the coming-soon placeholder. Keep the launch hold: the `noindex, nofollow` tag and the disallow-all `robots.txt` stay in place, and do not publish, deploy or connect a domain.
 
 ## What this is
 
-Soma Nova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and a NASM Certified Wellness Coach. (She no longer offers nutrition coaching as of 2026-11-09.) She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
+SomaNova is the new name for Protea Fitness (https://www.proteafitness.com), Emily Schofield's one-on-one personal training business in Morgan Hill, CA. Emily is a NASM Certified Personal Trainer and a NASM Certified Wellness Coach. (She no longer offers nutrition coaching as of 2026-11-09.) She trains clients in a private home studio, and occasionally in clients' homes. She is a mom with a chronic illness herself, and her whole approach is patient, safe and non-judgmental.
 
 Open proteafitness.com (Home, About, Services at /whatido, Happy Clients at /happyclients) and use it as the content template. Keep its structure, its warmth and its plain, personal voice. Modernize it and make it feel like a small boutique studio, not a gym chain or a tech startup.
 
@@ -100,7 +100,7 @@ One long home page plus a few short pages. Navigation: **Training, About, Kind W
 
 **Training** page: the four services in more depth, using all of the old /whatido copy, plus a note that in-home sessions are available on request.
 
-**About** page: the full old About copy, rewritten lightly for Soma Nova. Remove the line that explains the protea flower. Leave a clearly marked placeholder (`TODO(Emily): why "Soma Nova"`) where she can add one or two sentences on the new name. Do not invent the story.
+**About** page: the full old About copy, rewritten lightly for SomaNova. Remove the line that explains the protea flower. Leave a clearly marked placeholder (`TODO(Emily): why "SomaNova"`) where she can add one or two sentences on the new name. Do not invent the story.
 
 **Kind Words** page: all testimonials, same rules as above.
 

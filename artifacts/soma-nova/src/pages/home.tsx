@@ -19,7 +19,7 @@ const steps = [
 // Home rhythm: orchid hero, charcoal, blush, orchid, charcoal, orchid, blush pricing, orchid close, charcoal footer.
 export default function Home() {
   useSeo(
-    'Soma Nova | Personal training in Morgan Hill, CA',
+    'SomaNova | Personal training in Morgan Hill, CA',
     'One-on-one personal training with Emily Schofield, NASM Certified Personal Trainer and NASM Certified Wellness Coach, in a private studio in Morgan Hill, CA. Formerly Protea Fitness. Free 30-minute consult.',
   );
   return (

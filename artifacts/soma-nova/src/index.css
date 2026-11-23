@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 /*
-  Soma Nova palette (v3, orchid + charcoal). See docs/site-brief.md for the rules.
+  SomaNova palette (v3, orchid + charcoal). See docs/site-brief.md for the rules.
   Readability rules:
   - Text on orchid is --plum-ink or --char, never white.
   - White text only on --char or --plum.

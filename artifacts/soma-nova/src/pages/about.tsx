@@ -7,7 +7,7 @@ import { Accent } from '@/components/site/Accent';
 import { useSeo } from '@/components/site/useSeo';
 
 export default function About() {
-  useSeo('About Emily | Soma Nova, Morgan Hill', 'Emily Schofield is a NASM Certified Personal Trainer and NASM Certified Wellness Coach training clients one-on-one in Morgan Hill, CA.');
+  useSeo('About Emily | SomaNova, Morgan Hill', 'Emily Schofield is a NASM Certified Personal Trainer and NASM Certified Wellness Coach training clients one-on-one in Morgan Hill, CA.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-20 md:pb-28">
@@ -31,12 +31,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why "Soma Nova". Draft added at the owner's request on 2026-11-09: it states only the literal meaning.
+      {/* Why "SomaNova". Draft added at the owner's request on 2026-11-09: it states only the literal meaning.
           TODO(Emily): check this or rewrite it in your own words, and add your personal reason for the name if you like. */}
       <section className="s-blush py-20 md:py-28" aria-labelledby="name-h" data-testid="section-why-name">
         <Reveal className="wrap grid md:grid-cols-12 gap-10 md:gap-8">
           <div className="md:col-span-5">
-            <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />Why &ldquo;Soma Nova&rdquo;</p>
+            <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />Why &ldquo;SomaNova&rdquo;</p>
             <h2 id="name-h" className="mt-4 text-[3.6rem] md:text-[6rem]">SomaNova Foundations</h2>
           </div>
           <div className="md:col-span-6 md:col-start-7">
