@@ -22,8 +22,8 @@ export default function About() {
             <p className="mt-5 label">NASM Certified Personal Trainer · NASM Certified Wellness Coach</p>
 
             <div className="mt-10 measure prose-soft font-medium text-[1.05rem] md:text-[1.1rem]">
-              <p>I&rsquo;m certified through the National Academy of Sports Medicine in personal training and wellness coaching, and I keep learning about wellness all the time. This work is my passion, especially when a client cares about their long-term health. I can help you with how you look, but my heart is in helping you make lifestyle changes for a better quality of life.</p>
-              <p>I&rsquo;m a busy mom with a chronic illness, so I really do understand how hard it can be to take charge of your health. I will never judge you, push you to injury, or shame you. I will <em>always</em> draw out your personal best.</p>
+              <p>I&rsquo;m certified through the National Academy of Sports Medicine in personal training and wellness coaching. My continued education includes courses in youth training, current movement sciences, and women-specific training. This work is my passion, especially when a client cares about their long-term health. My heart is in helping you make lifestyle changes that last, with aesthetic changes being the cherry on top. I&rsquo;m more interested in your longevity and quality of life than in getting you into the same jeans as when you were twenty.</p>
+              <p>I&rsquo;m a busy mom with a chronic illness, and I had to fight my way from miserable to healthy. I really do understand how hard it can be to take charge of your health. I will never judge you, push you to injury, or shame you. I will always draw out your personal best. All I ask is that you be as committed to yourself as I am to you, giving 100% of what you have that day, one rep at a time.</p>
               <p>My job is to guide you safely toward a purpose, not to sell you endless sessions. Whether it&rsquo;s losing weight, getting stronger or something else entirely, let&rsquo;s work on it together. I know you can do it.</p>
             </div>
           </div>
