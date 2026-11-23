@@ -1,10 +1,10 @@
-import { Link } from 'wouter';
 import { site } from '@/content/site';
 
-export function ConsultButton({ label = 'Book a free 30-minute consult', testId = 'button-consult' }: { label?: string; testId?: string }) {
-  return <Link href="/contact" className="btn" data-testid={testId}>{label}</Link>;
+// Booking is by text only (owner request, 2026-11-23). Buttons open a text message to Emily.
+export function ConsultButton({ label = 'Text to book a free consult', testId = 'button-consult' }: { label?: string; testId?: string }) {
+  return <a href={site.sms} className="btn" data-testid={testId}>{label}</a>;
 }
 
 export function PhoneLink({ testId = 'link-phone' }: { testId?: string }) {
-  return <a href={site.tel} className="tlink" data-testid={testId}>Call or text {site.phoneDisplay}</a>;
+  return <a href={site.sms} className="tlink" data-testid={testId}>Text {site.phoneDisplay}</a>;
 }

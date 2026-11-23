@@ -6,8 +6,8 @@ export const site = {
   sms: 'sms:+14087057176',
   email: 'somanovafitness@gmail.com',
   mailto: 'mailto:somanovafitness@gmail.com',
-  instagramHandle: '@protea_fitness',
-  instagramUrl: 'https://www.instagram.com/protea_fitness/',
+  instagramHandle: '@somanova_fitness',
+  instagramUrl: 'https://www.instagram.com/somanova_fitness/',
   // Review listings (still named Protea Fitness until the listings are renamed).
   googleUrl: 'https://www.google.com/search?q=Protea+Fitness+Morgan+Hill&kgmid=/g/11l33cmlr0',
   yelpUrl: 'https://www.yelp.com/biz/protea-fitness-morgan-hill-2',

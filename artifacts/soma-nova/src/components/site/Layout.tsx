@@ -51,7 +51,7 @@ function Header() {
               {n.label}
             </Link>
           ))}
-          <Link href="/contact" className="btn btn-sm" data-testid="button-nav-consult">Book a consult</Link>
+          <a href={site.sms} className="btn btn-sm" data-testid="button-nav-consult">Text to book</a>
         </nav>
         <button
           type="button"
@@ -89,8 +89,8 @@ function Header() {
               </Link>
             ))}
             <div className="mt-10 flex flex-col gap-5 items-start">
-              <Link href="/contact" className="btn" data-testid="button-mobile-consult">Book a free consult</Link>
-              <a href={site.tel} className="tlink" data-testid="link-mobile-phone">Call or text {site.phoneDisplay}</a>
+              <a href={site.sms} className="btn" data-testid="button-mobile-consult">Text to book a free consult</a>
+              <a href={site.sms} className="tlink" data-testid="link-mobile-phone">Text {site.phoneDisplay}</a>
             </div>
             <p className="mt-auto pt-12 muted text-[15px]">Private studio in Morgan Hill, CA</p>
           </nav>
@@ -111,7 +111,7 @@ function Footer() {
         </div>
         <div className="md:col-span-4 text-[16px] flex flex-col gap-2.5">
           <p className="muted">{site.city}</p>
-          <a href={site.tel} className="tlink self-start" data-testid="link-footer-phone">{site.phoneDisplay}</a>
+          <a href={site.sms} className="tlink self-start" data-testid="link-footer-phone">Text {site.phoneDisplay}</a>
           <a href={site.mailto} className="tlink self-start break-all" data-testid="link-footer-email">{site.email}</a>
           <a href={site.instagramUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-instagram">Instagram {site.instagramHandle}</a>
           <a href={site.googleUrl} className="tlink self-start" rel="noopener" data-testid="link-footer-google">Reviews on Google</a>
