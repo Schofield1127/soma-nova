@@ -59,8 +59,8 @@ export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
   },
   coaching: {
     file: 'coaching',
-    alt: 'Emily adjusting a client’s form during an exercise',
-    shows: 'Hands-on coaching moment, a form correction',
+    alt: 'Emily Schofield smiling, holding a kettlebell',
+    shows: 'Emily with a kettlebell (a client coaching photo can replace it later)',
     ratio: '4:5',
     width: 1200,
     height: 1500,
