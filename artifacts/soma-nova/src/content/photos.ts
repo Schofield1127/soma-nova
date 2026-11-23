@@ -51,8 +51,8 @@ export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
   },
   studioDetail: {
     file: 'studio-detail',
-    alt: 'Detail of the studio: training equipment and a mat in window light',
-    shows: 'Studio detail: equipment, mat, plants or window light',
+    alt: 'Emily Schofield smiling',
+    shows: 'Friendly photo of Emily next to the free consult invite',
     ratio: '1:1',
     width: 1200,
     height: 1200,
