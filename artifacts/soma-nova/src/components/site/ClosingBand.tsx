@@ -4,7 +4,7 @@ import { PatternBand } from './PatternBand';
 export function ClosingBand({ title = 'No commitment. No pressure. No obligation.' }: { title?: string }) {
   return (
     <section className="s-orchid" aria-label="Book a consult">
-      <PatternBand className="h-[160px]" testId="pattern-closing" />
+      <PatternBand className="h-[200px] md:h-[280px]" testId="pattern-closing" />
       <div className="wrap py-20 md:py-28">
         <h2 className="text-[3.4rem] sm:text-[4.5rem] lg:text-[7rem] max-w-[14ch]">{title}</h2>
         <div className="mt-10 grid md:grid-cols-12 gap-8 items-end">
