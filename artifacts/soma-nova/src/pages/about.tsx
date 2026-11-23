@@ -37,7 +37,7 @@ export default function About() {
         <Reveal className="wrap grid md:grid-cols-12 gap-10 md:gap-8">
           <div className="md:col-span-5">
             <p className="label accent-label"><Accent name="dumbbell" className="w-8 h-4" />Why &ldquo;Soma Nova&rdquo;</p>
-            <h2 id="name-h" className="mt-4 text-[3.6rem] md:text-[6rem]">Body. New.</h2>
+            <h2 id="name-h" className="mt-4 text-[3.6rem] md:text-[6rem]">SomaNova Foundations</h2>
           </div>
           <div className="md:col-span-6 md:col-start-7">
             <dl className="m-0 border-t-2 border-plum">
@@ -51,7 +51,7 @@ export default function About() {
               </div>
             </dl>
             <p className="mt-8 measure text-[1.1rem] md:text-[1.15rem] font-medium">
-              Put together, it means a new body. Not someone else&rsquo;s body. Your own, approached in a new way.
+              Put together, it means new body. Not someone else&rsquo;s body, not the bodies you see on Instagram, but your own, cared for with kindness and confidence.
             </p>
           </div>
         </Reveal>

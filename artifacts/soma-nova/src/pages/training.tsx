@@ -14,7 +14,7 @@ export default function Training() {
           <div className="md:col-span-7">
             <p className="label">Training</p>
             <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[7.5rem]">Focused on you.</h1>
-            <p className="mt-6 measure font-medium text-[1.12rem]">Every session is one-on-one and built from what your body needs that day. Most people do a mix of the four below.</p>
+            <p className="mt-6 measure font-medium text-[1.12rem]">Every session is built around your goals and limitations, using principles from the four aspects of training below. I will always have edits for exercises so we can accommodate what your body is able to do that day. A good session should always include education and zero injuries.</p>
           </div>
           <div className="md:col-span-4 md:col-start-9">
             <div className="offset-block mr-[6px] mb-[6px]">
