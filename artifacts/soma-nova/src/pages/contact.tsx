@@ -2,14 +2,13 @@ import { site } from '@/content/site';
 import { useSeo } from '@/components/site/useSeo';
 
 const methods = [
-  { id: 'call', label: 'Call', value: site.phoneDisplay, href: site.tel },
   { id: 'text', label: 'Text', value: site.phoneDisplay, href: site.sms },
   { id: 'email', label: 'Email', value: site.email, href: site.mailto },
   { id: 'instagram', label: 'Instagram', value: site.instagramHandle, href: site.instagramUrl },
 ];
 
 export default function Contact() {
-  useSeo('Contact | Soma Nova, Morgan Hill', 'Book a free 30-minute consult with Emily. Call or text (408) 705-7176, or email.');
+  useSeo('Contact | Soma Nova, Morgan Hill', 'Book a free 30-minute consult with Emily. Text (408) 705-7176.');
   return (
     <>
       <section className="s-orchid pt-10 md:pt-20 pb-16 md:pb-24">
@@ -18,7 +17,7 @@ export default function Contact() {
           <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[7.5rem] max-w-[12ch]">Book a free 30-minute consult.</h1>
           <div className="mt-8 measure prose-soft font-medium">
             <p>The consult is a conversation. You tell me what you&rsquo;re hoping for and what has gotten in the way, I ask about your health and history, and we see if I&rsquo;m a good fit for you.</p>
-            <p>There&rsquo;s no commitment, pressure or obligation. Call, text or email, whichever is easiest, and we&rsquo;ll find a time.</p>
+            <p>There&rsquo;s no commitment, pressure or obligation. Text me and we&rsquo;ll find a time.</p>
           </div>
         </div>
       </section>

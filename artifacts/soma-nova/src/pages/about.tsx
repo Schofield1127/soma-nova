@@ -1,4 +1,5 @@
 import { Link } from 'wouter';
+import { site } from '@/content/site';
 import { Photo } from '@/components/site/Photo';
 import { Reveal } from '@/components/site/Reveal';
 import { ClosingBand } from '@/components/site/ClosingBand';
@@ -73,7 +74,7 @@ export default function About() {
           <div className="md:col-span-5 md:col-start-2 order-2 md:order-1">
             <h2 className="text-[3.2rem] md:text-[5rem]">Let&rsquo;s have a chat.</h2>
             <p className="mt-5 measure">I&rsquo;m happy to set up a free consult to see if what I offer is a good fit for you.</p>
-            <Link href="/contact" className="btn mt-8" data-testid="button-about-consult">Book a free 30-minute consult</Link>
+            <a href={site.sms} className="btn mt-8" data-testid="button-about-consult">Text to book a free consult</a>
           </div>
           <div className="md:col-span-4 md:col-start-8 order-1 md:order-2">
             <Photo slot="studioDetail" className="aspect-square" sizes="(min-width: 768px) 33vw, 100vw" />
