@@ -9,7 +9,7 @@ export const SITE_URL = 'https://somanovafitness.com';
  * and a robots.txt that blocks all crawlers. Flip to true (one line) on launch day:
  * the robots tag becomes `index, follow` and robots.txt allows crawling and lists the sitemap.
  */
-export const INDEXABLE = false;
+export const INDEXABLE = true;
 
 /** Public routes that belong in sitemap.xml. Keep in sync with App.tsx. */
 export const SITEMAP_ROUTES = ['/', '/training', '/about', '/kind-words', '/contact'];
