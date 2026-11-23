@@ -56,8 +56,8 @@ export default function Home() {
               <p className="muted">It&rsquo;s just you and me in the room. Nobody watching, nobody comparing.</p>
             </div>
           </div>
-          <div className="md:col-span-5 md:col-start-8">
-            <Photo slot="hero" className="aspect-[4/5]" sizes="(min-width: 768px) 40vw, 100vw" />
+          <div className="md:col-span-6 md:col-start-7">
+            <Photo slot="hero" className="aspect-[4/3]" sizes="(min-width: 768px) 50vw, 100vw" />
           </div>
         </Reveal>
       </section>

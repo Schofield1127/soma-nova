@@ -33,7 +33,7 @@ export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
   hero: {
     file: 'hero',
     mobileFile: 'hero-mobile',
-    alt: 'Dumbbell rack, kettlebells, bench and air bike in Emily’s private Morgan Hill studio',
+    alt: 'Emily’s private Morgan Hill studio: barbell, plyo box, air bike, dumbbells, kettlebells, ski machine and bench',
     shows: 'Emily’s studio equipment (a client session photo can replace it later)',
     ratio: '3:2 desktop, 4:5 mobile crop',
     width: 1800,
