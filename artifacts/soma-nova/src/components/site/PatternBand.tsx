@@ -31,7 +31,8 @@ function AccentScatter() {
 /*
   Duotone filter for the dumbbell pattern: grayscale the photo, then map
   shadows to --plum (#5F3857) and highlights to --orchid (#E37CD2).
-  Rendered once in Layout; used by .pattern-img via `filter: url(#sn-duotone)`.
+  Rendered once in Layout. Not applied to the band since 2026-11-23 (Emily wanted the
+  kettlebell photo in plain black and white); kept in case the pink duotone comes back.
 */
 export function DuotoneFilter() {
   return (
@@ -49,8 +50,9 @@ export function DuotoneFilter() {
 }
 
 /*
-  The signature dumbbell pattern. Until Emily supplies `pattern-hero`, this is
-  solid orchid with the slot caption. Never substitute stock, AI or drawn dumbbells.
+  The signature equipment band: Emily's black-and-white kettlebell photo (`pattern-hero`),
+  shown in plain black and white. Without that file it falls back to solid orchid with the
+  slot caption. Never substitute AI or drawn equipment.
 */
 export function PatternBand({
   className = '',

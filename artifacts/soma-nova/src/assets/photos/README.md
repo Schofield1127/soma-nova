@@ -5,7 +5,7 @@ Drop Emily's real photos here using the file names listed in `src/content/photos
 the site shows a flat placeholder (plum or orchid) describing the shot. The hero also accepts an
 optional `hero-mobile.*` file for a 4:5 phone crop.
 
-`pattern-hero.*` is the dumbbell pattern: a top-down photo of real dumbbells in diagonal rows.
-The site turns it into a plum/orchid duotone, so the original colors don't matter.
+`pattern-hero.*` is the equipment band at the top of the home page and above the closing call
+to action: Emily's black-and-white kettlebell photo, shown as is.
 
 No stock, AI-generated or old iStock images.

@@ -20,12 +20,12 @@ export type PhotoSlot = {
 };
 
 export const photoSlots: Record<PhotoSlotId, PhotoSlot> = {
-  // Signature element. Shown as a plum/orchid duotone (see PatternBand.tsx), so color doesn't matter.
-  // Must be Emily's own photo: not the old site's licensed stock, not AI, not a drawing.
+  // Signature element: Emily's black-and-white kettlebell photo, shown as is (see PatternBand.tsx).
+  // Emily chose it herself (2026-11-23). Not AI, not a drawing.
   patternHero: {
     file: 'pattern-hero',
     alt: '',
-    shows: 'Top-down shot of real dumbbells laid out in diagonal rows',
+    shows: 'Black-and-white kettlebells on a gym floor',
     ratio: 'wide, 3:1 or wider, at least 2400px',
     width: 3000,
     height: 1000,
