@@ -44,7 +44,7 @@ export function Wordmark({
       aria-label="Soma Nova, home"
     >
       {logo ? (
-        <img src={logo} alt="" className="h-12 md:h-14 w-auto" />
+        <img src={logo} alt="" className="h-12 md:h-16 w-auto" />
       ) : (
         <>
           {/* Kettlebell mark before the name (owner request); takes the section's accent color. */}
