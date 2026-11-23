@@ -21,6 +21,7 @@ export default function About() {
             <p className="label">About Emily</p>
             <h1 className="mt-4 text-plum-ink text-[4rem] md:text-[6.5rem]">Hi, I&rsquo;m Emily Schofield.</h1>
             <p className="mt-5 label">NASM Certified Personal Trainer · NASM Certified Wellness Coach</p>
+            <p className="mt-6 measure font-semibold text-[1.15rem] md:text-[1.25rem]" data-testid="text-about-protea">You may know us as Protea Fitness. Same trainer, new studio, new name.</p>
 
             <div className="mt-10 measure prose-soft font-medium text-[1.05rem] md:text-[1.1rem]">
               <p>I&rsquo;m certified through the National Academy of Sports Medicine in personal training and wellness coaching. My continued education includes courses in youth training, current movement sciences, and women-specific training. This work is my passion, especially when a client cares about their long-term health. My heart is in helping you make lifestyle changes that last, with aesthetic changes being the cherry on top. I&rsquo;m more interested in your longevity and quality of life than in getting you into the same jeans as when you were twenty.</p>
