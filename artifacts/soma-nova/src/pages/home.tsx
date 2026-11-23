@@ -36,7 +36,7 @@ export default function Home() {
           </h1>
           <div className="mt-8 md:mt-10 grid md:grid-cols-12 gap-8 items-end">
             <p className="md:col-span-6 measure font-medium text-[1.1rem] md:text-[1.2rem]">
-              One-on-one training in a private studio in Morgan Hill, built around your body, your goals and your life.
+              One-on-one private studio training in Morgan Hill, built around your body, your goals, and your life.
             </p>
             <div className="md:col-span-5 md:col-start-8 flex flex-col items-start gap-5">
               <ConsultButton testId="button-hero-consult" />
@@ -52,7 +52,7 @@ export default function Home() {
           <div className="md:col-span-6">
             <h2 className="text-white text-[3.6rem] md:text-[6rem]">Invest in yourself.</h2>
             <div className="mt-8 measure text-[1.1rem] md:text-[1.2rem] leading-[1.65] prose-soft">
-              <p>Taking care of yourself takes time, and it&rsquo;s worth it. I offer a mix of exercise and mindful practice, so you can learn to look after every part of your own body.</p>
+              <p>True wellness takes time, but health is our greatest wealth. I teach you how to exercise safely, move with intention, and reconnect with your body.</p>
               <p className="muted">It&rsquo;s just you and me in the room. Nobody watching, nobody comparing.</p>
             </div>
           </div>

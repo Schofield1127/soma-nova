@@ -194,11 +194,12 @@
   background: var(--char); z-index: -1;
 }
 
-/* Dumbbell pattern band. Duotone happens in the SVG filter in PatternBand.tsx. */
+/* Equipment photo band. Emily's black-and-white kettlebell photo, shown as is (no pink duotone)
+   so the site reads as welcoming to everyone (owner request, 2026-11-23). */
 .pattern-band { position: relative; overflow: hidden; background: var(--orchid); }
 .pattern-band .pattern-img {
   position: absolute; inset: -12%; background-size: cover; background-position: center;
-  filter: url(#sn-duotone);
+  filter: grayscale(1);
 }
 .pattern-band.drift .pattern-img { animation: sn-drift 40s linear infinite alternate; }
 @keyframes sn-drift {

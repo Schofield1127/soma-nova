@@ -36,10 +36,10 @@ export const services: Service[] = [
   {
     id: 'strength',
     name: 'Strength training',
-    short: 'Weights and resistance bands belong in everyone’s routine. I’ll teach you to use the equipment safely.',
+    short: 'Weights and resistance bands belong in everyone’s routine. I’ll teach you to use the equipment safely and effectively.',
     long: [
       'Strength and resistance work is often overlooked for women and older people, and it is an important part of everyone’s health routine.',
-      'We use free weights and resistance bands, and I will teach you how to use every piece of equipment safely, at a pace that makes sense for you.',
+      'We use free weights and resistance bands, and I will teach you how to use every piece of equipment safely and effectively, at a pace that makes sense for you.',
     ],
   },
   {
