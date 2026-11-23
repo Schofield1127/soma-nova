@@ -1,7 +1,7 @@
 kind = "web"
 previewPath = "/"
 title = "SomaNova"
-description = "Scaffold only for SomaNova, a solo personal training business in Morgan Hill. A coming-soon placeholder held from launch pending explicit approval."
+description = "Website for SomaNova, a solo personal training business in Morgan Hill, CA. Live at somanovafitness.com."
 version = "1.0.0"
 id = "artifacts/soma-nova"
 router = "path"

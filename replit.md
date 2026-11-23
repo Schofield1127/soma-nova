@@ -2,11 +2,11 @@
 
 SomaNova is a solo personal training business in Morgan Hill, CA, owned by Emily Schofield (NASM Certified Personal Trainer and NASM Certified Wellness Coach). It is the new name for Protea Fitness (proteafitness.com).
 
-## Scope and launch hold
+## Scope and launch
 
-- The user has approved building the real website, but has NOT approved launch.
+- Launched 2026-11-23: the owner approved going live everywhere. The site is live at https://somanovafitness.com and open to search engines.
 - The approved website brief is `artifacts/soma-nova/docs/site-brief.md`. Follow its content, design, photography, pricing, and technical rules in future sessions.
-- Keep `INDEXABLE = false` in `artifacts/soma-nova/seo.config.ts` until the user explicitly approves launch. It drives the robots meta tag, `robots.txt` and the sitemap line in robots.txt; don't hand-edit those.
+- `INDEXABLE = true` in `artifacts/soma-nova/seo.config.ts` since launch (2026-11-23). It drives the robots meta tag, `robots.txt` and the sitemap line in robots.txt; don't hand-edit those.
 - Do not publish, deploy, connect a domain, or buy anything without explicit user approval.
 - Do not add analytics, tracking pixels, or any third-party embeds without approval.
 
